@@ -102,7 +102,7 @@ const ContactPage = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl md:text-4xl font-display font-bold text-white"
+            className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white"
           >
             Get in <span className="gradient-text">Touch</span>
           </motion.h1>
@@ -110,7 +110,7 @@ const ContactPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="mt-4 text-voltcraft-gray-400 max-w-2xl mx-auto"
+            className="mt-4 text-gray-600 dark:text-voltcraft-gray-400 max-w-2xl mx-auto"
           >
             Have questions about our 3D printing services? We're here to help. 
             Reach out and we'll get back to you as soon as possible.
@@ -128,14 +128,14 @@ const ContactPage = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center gap-4 p-4 bg-voltcraft-dark rounded-xl border border-voltcraft-gray-800 hover:border-voltcraft-gray-700 transition-colors"
+                className="flex items-center gap-4 p-4 bg-white dark:bg-voltcraft-dark rounded-xl border border-gray-200 dark:border-voltcraft-gray-800 hover:border-gray-300 dark:border-voltcraft-gray-700 transition-colors"
               >
                 <div className="w-12 h-12 rounded-xl bg-voltcraft-primary/20 flex items-center justify-center flex-shrink-0">
                   <item.icon className="w-6 h-6 text-voltcraft-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-voltcraft-gray-400">{item.label}</p>
-                  <p className="text-white font-medium">{item.value}</p>
+                  <p className="text-sm text-gray-600 dark:text-voltcraft-gray-400">{item.label}</p>
+                  <p className="text-gray-900 dark:text-white font-medium">{item.value}</p>
                 </div>
               </motion.a>
             ))}
@@ -145,17 +145,17 @@ const ContactPage = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="p-6 bg-voltcraft-dark rounded-xl border border-voltcraft-gray-800"
+              className="p-6 bg-white dark:bg-voltcraft-dark rounded-xl border border-gray-200 dark:border-voltcraft-gray-800"
             >
               <div className="flex items-center gap-3 mb-4">
                 <Clock className="w-5 h-5 text-voltcraft-primary" />
-                <h3 className="font-semibold text-white">Business Hours</h3>
+                <h3 className="font-semibold text-gray-900 dark:text-white">Business Hours</h3>
               </div>
               <div className="space-y-2">
                 {businessHours.map((schedule) => (
                   <div key={schedule.day} className="flex justify-between text-sm">
-                    <span className="text-voltcraft-gray-400">{schedule.day}</span>
-                    <span className="text-white">{schedule.hours}</span>
+                    <span className="text-gray-600 dark:text-voltcraft-gray-400">{schedule.day}</span>
+                    <span className="text-gray-900 dark:text-white">{schedule.hours}</span>
                   </div>
                 ))}
               </div>
@@ -168,7 +168,7 @@ const ContactPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="lg:col-span-2"
           >
-            <div className="p-6 md:p-8 bg-voltcraft-dark rounded-2xl border border-voltcraft-gray-800">
+            <div className="p-6 md:p-8 bg-white dark:bg-voltcraft-dark rounded-2xl border border-gray-200 dark:border-voltcraft-gray-800">
               {isSubmitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -178,10 +178,10 @@ const ContactPage = () => {
                   <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="w-12 h-12 text-green-500" />
                   </div>
-                  <h3 className="text-2xl font-display font-bold text-white mb-2">
+                  <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white mb-2">
                     Message Sent!
                   </h3>
-                  <p className="text-voltcraft-gray-400 mb-6">
+                  <p className="text-gray-600 dark:text-voltcraft-gray-400 mb-6">
                     Thank you for reaching out. We'll get back to you within 24 hours.
                   </p>
                   <button
@@ -198,13 +198,13 @@ const ContactPage = () => {
                 <>
                   <div className="flex items-center gap-3 mb-6">
                     <MessageSquare className="w-6 h-6 text-voltcraft-primary" />
-                    <h2 className="text-xl font-semibold text-white">Send us a message</h2>
+                    <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Send us a message</h2>
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-medium text-voltcraft-gray-300 mb-2">
+                        <label className="block text-sm font-medium text-gray-700 dark:text-voltcraft-gray-300 mb-2">
                           Your Name
                         </label>
                         <input
@@ -212,12 +212,12 @@ const ContactPage = () => {
                           required
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full px-4 py-3 bg-voltcraft-gray-900 border-2 border-voltcraft-gray-800 rounded-lg text-white placeholder-voltcraft-gray-500 focus:outline-none focus:border-voltcraft-primary transition-colors"
+                          className="w-full px-4 py-3 bg-gray-100 dark:bg-voltcraft-gray-900 border-2 border-gray-200 dark:border-voltcraft-gray-800 rounded-lg text-gray-900 dark:text-white placeholder-voltcraft-gray-500 focus:outline-none focus:border-voltcraft-primary transition-colors"
                           placeholder="John Doe"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-voltcraft-gray-300 mb-2">
+                        <label className="block text-sm font-medium text-gray-700 dark:text-voltcraft-gray-300 mb-2">
                           Email Address
                         </label>
                         <input
@@ -225,14 +225,14 @@ const ContactPage = () => {
                           required
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-4 py-3 bg-voltcraft-gray-900 border-2 border-voltcraft-gray-800 rounded-lg text-white placeholder-voltcraft-gray-500 focus:outline-none focus:border-voltcraft-primary transition-colors"
+                          className="w-full px-4 py-3 bg-gray-100 dark:bg-voltcraft-gray-900 border-2 border-gray-200 dark:border-voltcraft-gray-800 rounded-lg text-gray-900 dark:text-white placeholder-voltcraft-gray-500 focus:outline-none focus:border-voltcraft-primary transition-colors"
                           placeholder="john@example.com"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-voltcraft-gray-300 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-voltcraft-gray-300 mb-2">
                         Subject
                       </label>
                       <input
@@ -240,13 +240,13 @@ const ContactPage = () => {
                         required
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                        className="w-full px-4 py-3 bg-voltcraft-gray-900 border-2 border-voltcraft-gray-800 rounded-lg text-white placeholder-voltcraft-gray-500 focus:outline-none focus:border-voltcraft-primary transition-colors"
+                        className="w-full px-4 py-3 bg-gray-100 dark:bg-voltcraft-gray-900 border-2 border-gray-200 dark:border-voltcraft-gray-800 rounded-lg text-gray-900 dark:text-white placeholder-voltcraft-gray-500 focus:outline-none focus:border-voltcraft-primary transition-colors"
                         placeholder="What's this about?"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-voltcraft-gray-300 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-voltcraft-gray-300 mb-2">
                         Message
                       </label>
                       <textarea
@@ -254,7 +254,7 @@ const ContactPage = () => {
                         rows={5}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full px-4 py-3 bg-voltcraft-gray-900 border-2 border-voltcraft-gray-800 rounded-lg text-white placeholder-voltcraft-gray-500 focus:outline-none focus:border-voltcraft-primary transition-colors resize-none"
+                        className="w-full px-4 py-3 bg-gray-100 dark:bg-voltcraft-gray-900 border-2 border-gray-200 dark:border-voltcraft-gray-800 rounded-lg text-gray-900 dark:text-white placeholder-voltcraft-gray-500 focus:outline-none focus:border-voltcraft-primary transition-colors resize-none"
                         placeholder="Tell us more about your project or question..."
                       />
                     </div>
@@ -286,10 +286,10 @@ const ContactPage = () => {
         {/* FAQs */}
         <div>
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-display font-bold text-white">
+            <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white">
               Frequently Asked <span className="gradient-text">Questions</span>
             </h2>
-            <p className="mt-4 text-voltcraft-gray-400">
+            <p className="mt-4 text-gray-600 dark:text-voltcraft-gray-400">
               Find answers to common questions about our services.
             </p>
           </div>
@@ -302,10 +302,10 @@ const ContactPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-6 bg-voltcraft-dark rounded-xl border border-voltcraft-gray-800"
+                className="p-6 bg-white dark:bg-voltcraft-dark rounded-xl border border-gray-200 dark:border-voltcraft-gray-800"
               >
-                <h3 className="font-semibold text-white mb-2">{faq.question}</h3>
-                <p className="text-voltcraft-gray-400 text-sm">{faq.answer}</p>
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">{faq.question}</h3>
+                <p className="text-gray-600 dark:text-voltcraft-gray-400 text-sm">{faq.answer}</p>
               </motion.div>
             ))}
           </div>

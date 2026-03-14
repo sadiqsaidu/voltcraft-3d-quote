@@ -77,7 +77,7 @@ const ManualDimensions = ({ onDimensionsChange, disabled }: ManualDimensionsProp
       {/* Info box */}
       <div className="p-3 bg-voltcraft-secondary/10 border border-voltcraft-secondary/30 rounded-lg flex items-start gap-3">
         <Info className="w-5 h-5 text-voltcraft-secondary flex-shrink-0 mt-0.5" />
-        <p className="text-sm text-voltcraft-gray-300">
+        <p className="text-sm text-gray-700 dark:text-voltcraft-gray-300">
           Enter the bounding box dimensions of your model in millimeters. 
           This gives an estimated quote based on the overall size. 
           For more accurate pricing, upload your actual 3D model file.
@@ -87,7 +87,7 @@ const ManualDimensions = ({ onDimensionsChange, disabled }: ManualDimensionsProp
       {/* Dimension inputs */}
       <div className="grid grid-cols-3 gap-4">
         <div>
-          <label className="block text-sm font-medium text-voltcraft-gray-400 mb-2">
+          <label className="block text-sm font-medium text-gray-600 dark:text-voltcraft-gray-400 mb-2">
             Width (X)
           </label>
           <div className="relative">
@@ -97,16 +97,16 @@ const ManualDimensions = ({ onDimensionsChange, disabled }: ManualDimensionsProp
               value={dimensions.x}
               onChange={(e) => updateDimension('x', e.target.value)}
               placeholder="0"
-              className="w-full px-4 py-3 bg-voltcraft-darker border-2 border-white/10 rounded-lg text-white text-center text-lg font-semibold placeholder-voltcraft-gray-600 focus:outline-none focus:border-voltcraft-secondary transition-colors"
+              className="w-full px-4 py-3 bg-gray-50 dark:bg-voltcraft-darker border-2 border-gray-200 dark:border-white/10 rounded-lg text-gray-900 dark:text-white text-center text-lg font-semibold placeholder-voltcraft-gray-600 focus:outline-none focus:border-voltcraft-secondary transition-colors"
             />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-voltcraft-gray-500 text-sm">
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-voltcraft-gray-500 text-sm">
               mm
             </span>
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-voltcraft-gray-400 mb-2">
+          <label className="block text-sm font-medium text-gray-600 dark:text-voltcraft-gray-400 mb-2">
             Depth (Y)
           </label>
           <div className="relative">
@@ -116,16 +116,16 @@ const ManualDimensions = ({ onDimensionsChange, disabled }: ManualDimensionsProp
               value={dimensions.y}
               onChange={(e) => updateDimension('y', e.target.value)}
               placeholder="0"
-              className="w-full px-4 py-3 bg-voltcraft-darker border-2 border-white/10 rounded-lg text-white text-center text-lg font-semibold placeholder-voltcraft-gray-600 focus:outline-none focus:border-voltcraft-secondary transition-colors"
+              className="w-full px-4 py-3 bg-gray-50 dark:bg-voltcraft-darker border-2 border-gray-200 dark:border-white/10 rounded-lg text-gray-900 dark:text-white text-center text-lg font-semibold placeholder-voltcraft-gray-600 focus:outline-none focus:border-voltcraft-secondary transition-colors"
             />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-voltcraft-gray-500 text-sm">
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-voltcraft-gray-500 text-sm">
               mm
             </span>
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-voltcraft-gray-400 mb-2">
+          <label className="block text-sm font-medium text-gray-600 dark:text-voltcraft-gray-400 mb-2">
             Height (Z)
           </label>
           <div className="relative">
@@ -135,9 +135,9 @@ const ManualDimensions = ({ onDimensionsChange, disabled }: ManualDimensionsProp
               value={dimensions.z}
               onChange={(e) => updateDimension('z', e.target.value)}
               placeholder="0"
-              className="w-full px-4 py-3 bg-voltcraft-darker border-2 border-white/10 rounded-lg text-white text-center text-lg font-semibold placeholder-voltcraft-gray-600 focus:outline-none focus:border-voltcraft-secondary transition-colors"
+              className="w-full px-4 py-3 bg-gray-50 dark:bg-voltcraft-darker border-2 border-gray-200 dark:border-white/10 rounded-lg text-gray-900 dark:text-white text-center text-lg font-semibold placeholder-voltcraft-gray-600 focus:outline-none focus:border-voltcraft-secondary transition-colors"
             />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-voltcraft-gray-500 text-sm">
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-voltcraft-gray-500 text-sm">
               mm
             </span>
           </div>
@@ -149,15 +149,15 @@ const ManualDimensions = ({ onDimensionsChange, disabled }: ManualDimensionsProp
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="p-4 bg-voltcraft-darker rounded-lg"
+          className="p-4 bg-gray-50 dark:bg-voltcraft-darker rounded-lg"
         >
           <div className="flex items-center gap-4">
             <Box className="w-12 h-12 text-voltcraft-secondary" />
             <div>
-              <p className="text-white font-medium">
+              <p className="text-gray-900 dark:text-white font-medium">
                 {dimensions.x} × {dimensions.y} × {dimensions.z} mm
               </p>
-              <p className="text-sm text-voltcraft-gray-400">
+              <p className="text-sm text-gray-600 dark:text-voltcraft-gray-400">
                 Estimated volume: {((parseFloat(dimensions.x) * parseFloat(dimensions.y) * parseFloat(dimensions.z)) / 1000).toFixed(2)} cm³
               </p>
             </div>
@@ -167,13 +167,13 @@ const ManualDimensions = ({ onDimensionsChange, disabled }: ManualDimensionsProp
 
       {/* Quick presets */}
       <div>
-        <p className="text-sm text-voltcraft-gray-500 mb-2">Quick presets:</p>
+        <p className="text-sm text-gray-500 dark:text-voltcraft-gray-500 mb-2">Quick presets:</p>
         <div className="flex flex-wrap gap-2">
           {presets.map((preset) => (
             <button
               key={preset.name}
               onClick={() => applyPreset(preset)}
-              className="px-3 py-1.5 text-sm bg-voltcraft-dark hover:bg-voltcraft-dark/80 text-voltcraft-gray-300 rounded-lg transition-colors"
+              className="px-3 py-1.5 text-sm bg-white dark:bg-voltcraft-dark hover:bg-white dark:bg-voltcraft-dark/80 text-gray-700 dark:text-voltcraft-gray-300 rounded-lg transition-colors"
             >
               {preset.name}
             </button>

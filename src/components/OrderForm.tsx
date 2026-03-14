@@ -86,15 +86,15 @@ const OrderForm = ({ fileName, analysis, material, settings, quote }: OrderFormP
         <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
           <CheckCircle className="w-12 h-12 text-green-500" />
         </div>
-        <h3 className="text-2xl font-display font-bold text-white mb-2">
+        <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white mb-2">
           Quote Request Submitted!
         </h3>
-        <p className="text-voltcraft-gray-400 mb-6 max-w-md mx-auto">
+        <p className="text-gray-600 dark:text-voltcraft-gray-400 mb-6 max-w-md mx-auto">
           Thank you for your interest. We'll review your request and get back to you 
           within 24 hours with a final quote and payment details.
         </p>
-        <div className="p-4 bg-voltcraft-dark rounded-xl inline-block">
-          <p className="text-sm text-voltcraft-gray-400">Reference Number</p>
+        <div className="p-4 bg-white dark:bg-voltcraft-dark rounded-xl inline-block">
+          <p className="text-sm text-gray-600 dark:text-voltcraft-gray-400">Reference Number</p>
           <p className="text-xl font-mono text-voltcraft-primary font-semibold">
             VC-{Date.now().toString(36).toUpperCase()}
           </p>
@@ -111,33 +111,33 @@ const OrderForm = ({ fileName, analysis, material, settings, quote }: OrderFormP
       className="space-y-6"
     >
       <div className="flex items-center justify-between">
-        <h3 className="text-xl font-display font-bold text-white">
+        <h3 className="text-xl font-display font-bold text-gray-900 dark:text-white">
           Submit Print Request
         </h3>
         <div className="text-right">
-          <p className="text-sm text-voltcraft-gray-400">Estimated Total</p>
+          <p className="text-sm text-gray-600 dark:text-voltcraft-gray-400">Estimated Total</p>
           <p className="text-xl font-bold gradient-text">{formatPrice(quote.totalCost)}</p>
         </div>
       </div>
 
       {/* Order Summary */}
-      <div className="p-4 bg-voltcraft-gray-900/50 rounded-xl text-sm">
+      <div className="p-4 bg-gray-100 dark:bg-voltcraft-gray-900/50 rounded-xl text-sm">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div>
-            <span className="text-voltcraft-gray-500">File</span>
-            <p className="text-white truncate">{fileName}</p>
+            <span className="text-gray-500 dark:text-voltcraft-gray-500">File</span>
+            <p className="text-gray-900 dark:text-white truncate">{fileName}</p>
           </div>
           <div>
-            <span className="text-voltcraft-gray-500">Material</span>
-            <p className="text-white">{material.shortName} ({settings.color})</p>
+            <span className="text-gray-500 dark:text-voltcraft-gray-500">Material</span>
+            <p className="text-gray-900 dark:text-white">{material.shortName} ({settings.color})</p>
           </div>
           <div>
-            <span className="text-voltcraft-gray-500">Quantity</span>
-            <p className="text-white">{settings.quantity}</p>
+            <span className="text-gray-500 dark:text-voltcraft-gray-500">Quantity</span>
+            <p className="text-gray-900 dark:text-white">{settings.quantity}</p>
           </div>
           <div>
-            <span className="text-voltcraft-gray-500">Est. Time</span>
-            <p className="text-white">{formatPrintTime(quote.printTime)}</p>
+            <span className="text-gray-500 dark:text-voltcraft-gray-500">Est. Time</span>
+            <p className="text-gray-900 dark:text-white">{formatPrintTime(quote.printTime)}</p>
           </div>
         </div>
       </div>
@@ -145,7 +145,7 @@ const OrderForm = ({ fileName, analysis, material, settings, quote }: OrderFormP
       {/* Contact Information */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-voltcraft-gray-300 mb-2">
+          <label className="block text-sm font-medium text-gray-700 dark:text-voltcraft-gray-300 mb-2">
             <User className="w-4 h-4 inline mr-2" />
             Full Name *
           </label>
@@ -153,8 +153,8 @@ const OrderForm = ({ fileName, analysis, material, settings, quote }: OrderFormP
             type="text"
             value={formData.name}
             onChange={(e) => updateField('name', e.target.value)}
-            className={`w-full px-4 py-3 bg-voltcraft-dark border-2 rounded-lg text-white placeholder-voltcraft-gray-500 focus:outline-none transition-colors ${
-              errors.name ? 'border-red-500' : 'border-voltcraft-gray-800 focus:border-voltcraft-primary'
+            className={`w-full px-4 py-3 bg-white dark:bg-voltcraft-dark border-2 rounded-lg text-gray-900 dark:text-white placeholder-voltcraft-gray-500 focus:outline-none transition-colors ${
+              errors.name ? 'border-red-500' : 'border-gray-200 dark:border-voltcraft-gray-800 focus:border-voltcraft-primary'
             }`}
             placeholder="Your full name"
           />
@@ -164,7 +164,7 @@ const OrderForm = ({ fileName, analysis, material, settings, quote }: OrderFormP
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-voltcraft-gray-300 mb-2">
+          <label className="block text-sm font-medium text-gray-700 dark:text-voltcraft-gray-300 mb-2">
             <Mail className="w-4 h-4 inline mr-2" />
             Email Address *
           </label>
@@ -172,8 +172,8 @@ const OrderForm = ({ fileName, analysis, material, settings, quote }: OrderFormP
             type="email"
             value={formData.email}
             onChange={(e) => updateField('email', e.target.value)}
-            className={`w-full px-4 py-3 bg-voltcraft-dark border-2 rounded-lg text-white placeholder-voltcraft-gray-500 focus:outline-none transition-colors ${
-              errors.email ? 'border-red-500' : 'border-voltcraft-gray-800 focus:border-voltcraft-primary'
+            className={`w-full px-4 py-3 bg-white dark:bg-voltcraft-dark border-2 rounded-lg text-gray-900 dark:text-white placeholder-voltcraft-gray-500 focus:outline-none transition-colors ${
+              errors.email ? 'border-red-500' : 'border-gray-200 dark:border-voltcraft-gray-800 focus:border-voltcraft-primary'
             }`}
             placeholder="your@email.com"
           />
@@ -183,7 +183,7 @@ const OrderForm = ({ fileName, analysis, material, settings, quote }: OrderFormP
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-voltcraft-gray-300 mb-2">
+          <label className="block text-sm font-medium text-gray-700 dark:text-voltcraft-gray-300 mb-2">
             <Phone className="w-4 h-4 inline mr-2" />
             Phone Number *
           </label>
@@ -191,8 +191,8 @@ const OrderForm = ({ fileName, analysis, material, settings, quote }: OrderFormP
             type="tel"
             value={formData.phone}
             onChange={(e) => updateField('phone', e.target.value)}
-            className={`w-full px-4 py-3 bg-voltcraft-dark border-2 rounded-lg text-white placeholder-voltcraft-gray-500 focus:outline-none transition-colors ${
-              errors.phone ? 'border-red-500' : 'border-voltcraft-gray-800 focus:border-voltcraft-primary'
+            className={`w-full px-4 py-3 bg-white dark:bg-voltcraft-dark border-2 rounded-lg text-gray-900 dark:text-white placeholder-voltcraft-gray-500 focus:outline-none transition-colors ${
+              errors.phone ? 'border-red-500' : 'border-gray-200 dark:border-voltcraft-gray-800 focus:border-voltcraft-primary'
             }`}
             placeholder="+234 xxx xxx xxxx"
           />
@@ -202,7 +202,7 @@ const OrderForm = ({ fileName, analysis, material, settings, quote }: OrderFormP
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-voltcraft-gray-300 mb-2">
+          <label className="block text-sm font-medium text-gray-700 dark:text-voltcraft-gray-300 mb-2">
             <MapPin className="w-4 h-4 inline mr-2" />
             Delivery Address
           </label>
@@ -210,14 +210,14 @@ const OrderForm = ({ fileName, analysis, material, settings, quote }: OrderFormP
             type="text"
             value={formData.address}
             onChange={(e) => updateField('address', e.target.value)}
-            className="w-full px-4 py-3 bg-voltcraft-dark border-2 border-voltcraft-gray-800 rounded-lg text-white placeholder-voltcraft-gray-500 focus:outline-none focus:border-voltcraft-primary transition-colors"
+            className="w-full px-4 py-3 bg-white dark:bg-voltcraft-dark border-2 border-gray-200 dark:border-voltcraft-gray-800 rounded-lg text-gray-900 dark:text-white placeholder-voltcraft-gray-500 focus:outline-none focus:border-voltcraft-primary transition-colors"
             placeholder="Your address (optional)"
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-voltcraft-gray-300 mb-2">
+        <label className="block text-sm font-medium text-gray-700 dark:text-voltcraft-gray-300 mb-2">
           <MessageSquare className="w-4 h-4 inline mr-2" />
           Additional Notes
         </label>
@@ -225,7 +225,7 @@ const OrderForm = ({ fileName, analysis, material, settings, quote }: OrderFormP
           value={formData.notes}
           onChange={(e) => updateField('notes', e.target.value)}
           rows={3}
-          className="w-full px-4 py-3 bg-voltcraft-dark border-2 border-voltcraft-gray-800 rounded-lg text-white placeholder-voltcraft-gray-500 focus:outline-none focus:border-voltcraft-primary transition-colors resize-none"
+          className="w-full px-4 py-3 bg-white dark:bg-voltcraft-dark border-2 border-gray-200 dark:border-voltcraft-gray-800 rounded-lg text-gray-900 dark:text-white placeholder-voltcraft-gray-500 focus:outline-none focus:border-voltcraft-primary transition-colors resize-none"
           placeholder="Any special requirements, preferred colors, or questions..."
         />
       </div>
@@ -252,7 +252,7 @@ const OrderForm = ({ fileName, analysis, material, settings, quote }: OrderFormP
         </motion.button>
       </div>
 
-      <p className="text-voltcraft-gray-500 text-xs text-center">
+      <p className="text-gray-500 dark:text-voltcraft-gray-500 text-xs text-center">
         By submitting this form, you agree to our terms of service. We'll contact you 
         within 24 hours to confirm your order and provide payment details.
       </p>

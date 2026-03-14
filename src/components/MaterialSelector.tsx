@@ -24,9 +24,9 @@ const PropertyBar = ({ value, max = 5 }: { value: number; max?: number }) => (
 const MaterialSelector = ({ selectedMaterial, onSelectMaterial }: MaterialSelectorProps) => {
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
         Select Material
-        <span className="text-sm font-normal text-voltcraft-gray-400">
+        <span className="text-sm font-normal text-gray-600 dark:text-voltcraft-gray-400">
           (affects price and durability)
         </span>
       </h3>
@@ -44,20 +44,20 @@ const MaterialSelector = ({ selectedMaterial, onSelectMaterial }: MaterialSelect
               className={`relative p-4 rounded-xl text-left transition-all ${
                 isSelected
                   ? 'bg-voltcraft-primary/10 border-2 border-voltcraft-primary'
-                  : 'bg-voltcraft-dark border-2 border-white/10 hover:border-white/20'
+                  : 'bg-white dark:bg-voltcraft-dark border-2 border-gray-200 dark:border-white/10 hover:border-gray-300 dark:border-white/20'
               }`}
             >
               {/* Selection indicator */}
               {isSelected && (
                 <div className="absolute top-3 right-3 w-6 h-6 rounded-full bg-voltcraft-primary flex items-center justify-center">
-                  <Check className="w-4 h-4 text-white" />
+                  <Check className="w-4 h-4 text-gray-900 dark:text-white" />
                 </div>
               )}
               
               <div className="space-y-3">
                 <div>
-                  <h4 className="font-semibold text-white">{material.shortName}</h4>
-                  <p className="text-xs text-voltcraft-gray-400 mt-0.5 line-clamp-2">
+                  <h4 className="font-semibold text-gray-900 dark:text-white">{material.shortName}</h4>
+                  <p className="text-xs text-gray-600 dark:text-voltcraft-gray-400 mt-0.5 line-clamp-2">
                     {material.description.slice(0, 80)}...
                   </p>
                 </div>
@@ -68,17 +68,17 @@ const MaterialSelector = ({ selectedMaterial, onSelectMaterial }: MaterialSelect
                 </div>
                 
                 {/* Properties */}
-                <div className="space-y-2 pt-2 border-t border-white/10">
+                <div className="space-y-2 pt-2 border-t border-gray-200 dark:border-white/10">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs text-voltcraft-gray-400">Strength</span>
+                    <span className="text-xs text-gray-600 dark:text-voltcraft-gray-400">Strength</span>
                     <PropertyBar value={material.properties.strength} />
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs text-voltcraft-gray-400">Flexibility</span>
+                    <span className="text-xs text-gray-600 dark:text-voltcraft-gray-400">Flexibility</span>
                     <PropertyBar value={material.properties.flexibility} />
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs text-voltcraft-gray-400">Heat Resist</span>
+                    <span className="text-xs text-gray-600 dark:text-voltcraft-gray-400">Heat Resist</span>
                     <PropertyBar value={material.properties.heatResistance} />
                   </div>
                 </div>
@@ -88,13 +88,13 @@ const MaterialSelector = ({ selectedMaterial, onSelectMaterial }: MaterialSelect
                   {material.colors.slice(0, 6).map((color) => (
                     <span
                       key={color}
-                      className="text-xs px-2 py-0.5 rounded-full bg-voltcraft-darker text-voltcraft-gray-400"
+                      className="text-xs px-2 py-0.5 rounded-full bg-gray-50 dark:bg-voltcraft-darker text-gray-600 dark:text-voltcraft-gray-400"
                     >
                       {color}
                     </span>
                   ))}
                   {material.colors.length > 6 && (
-                    <span className="text-xs px-2 py-0.5 rounded-full bg-voltcraft-darker text-voltcraft-gray-400">
+                    <span className="text-xs px-2 py-0.5 rounded-full bg-gray-50 dark:bg-voltcraft-darker text-gray-600 dark:text-voltcraft-gray-400">
                       +{material.colors.length - 6}
                     </span>
                   )}
@@ -110,18 +110,18 @@ const MaterialSelector = ({ selectedMaterial, onSelectMaterial }: MaterialSelect
         key={selectedMaterial.id}
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="p-4 bg-voltcraft-dark rounded-xl border border-white/10"
+        className="p-4 bg-white dark:bg-voltcraft-dark rounded-xl border border-gray-200 dark:border-white/10"
       >
         <div className="flex items-start gap-3">
           <Info className="w-5 h-5 text-voltcraft-primary flex-shrink-0 mt-0.5" />
           <div>
-            <h4 className="font-semibold text-white">{selectedMaterial.name}</h4>
-            <p className="text-sm text-voltcraft-gray-400 mt-1">
+            <h4 className="font-semibold text-gray-900 dark:text-white">{selectedMaterial.name}</h4>
+            <p className="text-sm text-gray-600 dark:text-voltcraft-gray-400 mt-1">
               {selectedMaterial.description}
             </p>
             <div className="mt-3">
-              <span className="text-sm text-voltcraft-gray-500">Best for: </span>
-              <span className="text-sm text-voltcraft-gray-300">
+              <span className="text-sm text-gray-500 dark:text-voltcraft-gray-500">Best for: </span>
+              <span className="text-sm text-gray-700 dark:text-voltcraft-gray-300">
                 {selectedMaterial.suitable.join(', ')}
               </span>
             </div>

@@ -134,14 +134,14 @@ const ModelViewer = ({ file, dimensions, className }: ModelViewerProps) => {
   const showDimensionBox = !file && dimensions && (dimensions.x > 0 || dimensions.y > 0 || dimensions.z > 0)
 
   return (
-    <div className={`relative w-full rounded-xl overflow-hidden bg-voltcraft-gray-900 ${className || 'h-[400px] md:h-[500px] lg:h-[600px]'}`}>
+    <div className={`relative w-full rounded-xl overflow-hidden bg-gray-100 dark:bg-voltcraft-gray-900 ${className || 'h-[400px] md:h-[500px] lg:h-[600px]'}`}>
       {/* 3D Canvas */}
       <Canvas
         shadows
         camera={{ position: [150, 150, 150], fov: 45 }}
         gl={{ antialias: true, alpha: true }}
       >
-        <color attach="background" args={['#0a0f1c']} />
+        {/* <color attach="background" args={['#0a0f1c']} /> */}
         
         {/* Lighting */}
         <ambientLight intensity={0.4} />
@@ -209,7 +209,7 @@ const ModelViewer = ({ file, dimensions, className }: ModelViewerProps) => {
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="text-center">
             <Box className="w-16 h-16 mx-auto text-voltcraft-gray-600 mb-3" />
-            <p className="text-voltcraft-gray-500">Upload a model or enter dimensions</p>
+            <p className="text-gray-500 dark:text-voltcraft-gray-500">Upload a model or enter dimensions</p>
             <p className="text-voltcraft-gray-600 text-sm mt-1">to see preview</p>
           </div>
         </div>
@@ -222,7 +222,7 @@ const ModelViewer = ({ file, dimensions, className }: ModelViewerProps) => {
           className={`p-2 rounded-lg transition-colors ${
             autoRotate 
               ? 'bg-voltcraft-primary text-white' 
-              : 'bg-voltcraft-dark/80 text-voltcraft-gray-400 hover:text-white'
+              : 'bg-white dark:bg-voltcraft-dark/80 text-gray-600 dark:text-voltcraft-gray-400 hover:text-gray-900 dark:text-white'
           }`}
           title={autoRotate ? 'Stop rotation' : 'Auto rotate'}
         >
@@ -230,21 +230,21 @@ const ModelViewer = ({ file, dimensions, className }: ModelViewerProps) => {
         </button>
         <button
           onClick={handleZoomIn}
-          className="p-2 rounded-lg bg-voltcraft-dark/80 text-voltcraft-gray-400 hover:text-white transition-colors"
+          className="p-2 rounded-lg bg-white dark:bg-voltcraft-dark/80 text-gray-600 dark:text-voltcraft-gray-400 hover:text-gray-900 dark:text-white transition-colors"
           title="Zoom in"
         >
           <ZoomIn className="w-4 h-4" />
         </button>
         <button
           onClick={handleZoomOut}
-          className="p-2 rounded-lg bg-voltcraft-dark/80 text-voltcraft-gray-400 hover:text-white transition-colors"
+          className="p-2 rounded-lg bg-white dark:bg-voltcraft-dark/80 text-gray-600 dark:text-voltcraft-gray-400 hover:text-gray-900 dark:text-white transition-colors"
           title="Zoom out"
         >
           <ZoomOut className="w-4 h-4" />
         </button>
         <button
           onClick={handleReset}
-          className="p-2 rounded-lg bg-voltcraft-dark/80 text-voltcraft-gray-400 hover:text-white transition-colors"
+          className="p-2 rounded-lg bg-white dark:bg-voltcraft-dark/80 text-gray-600 dark:text-voltcraft-gray-400 hover:text-gray-900 dark:text-white transition-colors"
           title="Reset view"
         >
           <Maximize2 className="w-4 h-4" />
@@ -253,9 +253,9 @@ const ModelViewer = ({ file, dimensions, className }: ModelViewerProps) => {
 
       {/* Dimension label */}
       {showDimensionBox && (
-        <div className="absolute top-4 left-4 px-3 py-1.5 rounded-lg bg-voltcraft-dark/80 text-sm">
-          <span className="text-voltcraft-gray-400">Preview: </span>
-          <span className="text-white font-medium">
+        <div className="absolute top-4 left-4 px-3 py-1.5 rounded-lg bg-white dark:bg-voltcraft-dark/80 text-sm">
+          <span className="text-gray-600 dark:text-voltcraft-gray-400">Preview: </span>
+          <span className="text-gray-900 dark:text-white font-medium">
             {dimensions.x} × {dimensions.y} × {dimensions.z} mm
           </span>
         </div>
@@ -263,16 +263,16 @@ const ModelViewer = ({ file, dimensions, className }: ModelViewerProps) => {
 
       {/* File info */}
       {file && (
-        <div className="absolute top-4 left-4 px-3 py-1.5 rounded-lg bg-voltcraft-dark/80 text-sm">
-          <span className="text-voltcraft-gray-400">Model: </span>
-          <span className="text-white font-medium truncate max-w-[200px] inline-block align-bottom">
+        <div className="absolute top-4 left-4 px-3 py-1.5 rounded-lg bg-white dark:bg-voltcraft-dark/80 text-sm">
+          <span className="text-gray-600 dark:text-voltcraft-gray-400">Model: </span>
+          <span className="text-gray-900 dark:text-white font-medium truncate max-w-[200px] inline-block align-bottom">
             {file.name}
           </span>
         </div>
       )}
 
       {/* Instructions */}
-      <div className="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-voltcraft-dark/80 text-xs text-voltcraft-gray-400">
+      <div className="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-white dark:bg-voltcraft-dark/80 text-xs text-gray-600 dark:text-voltcraft-gray-400">
         Drag to rotate • Scroll to zoom
       </div>
     </div>

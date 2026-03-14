@@ -12,27 +12,15 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setThemeState] = useState<Theme>(() => {
-    // Check localStorage first
-    const saved = localStorage.getItem('voltcraft-theme') as Theme
-    if (saved) return saved
-    // Check system preference
-    if (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: light)').matches) {
-      return 'light'
-    }
-    return 'dark'
+    const saved = localStorage.getItem('voltcraft-theme')
+    if (saved === 'light' || saved === 'dark') return saved
+    return 'light'
   })
 
   useEffect(() => {
     const root = document.documentElement
-    
-    if (theme === 'dark') {
-      root.classList.add('dark')
-      root.classList.remove('light')
-    } else {
-      root.classList.add('light')
-      root.classList.remove('dark')
-    }
-    
+
+    root.classList.toggle('dark', theme === 'dark')
     localStorage.setItem('voltcraft-theme', theme)
   }, [theme])
 

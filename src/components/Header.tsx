@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
+import { useTheme } from '../contexts/ThemeContext'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { theme, toggleTheme } = useTheme()
   const location = useLocation()
 
   const navLinks = [
@@ -29,8 +31,8 @@ const Header = () => {
                 to={link.path}
                 className={`relative px-4 py-2 rounded-lg font-medium transition-colors ${
                   isActive(link.path)
-                    ? 'text-white'
-                    : 'text-voltcraft-gray-400 hover:text-white'
+                    ? 'text-gray-900 dark:text-white'
+                    : 'text-gray-600 dark:text-voltcraft-gray-400 hover:text-gray-900 dark:hover:text-white'
                 }`}
               >
                 {isActive(link.path) && (
@@ -45,21 +47,37 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <Link
-            to="/quote"
-            className="hidden md:flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-voltcraft-primary to-voltcraft-secondary rounded-lg font-semibold text-white hover:opacity-90 transition-opacity glow-blue"
-          >
-            Get Instant Quote
-          </Link>
+                    {/* CTA Button */}
+          <div className="hidden md:flex items-center gap-4">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg bg-gray-100 dark:bg-voltcraft-gray-800 text-gray-600 dark:text-voltcraft-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+              aria-label="Toggle theme"
+            >
+              {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+            </button>
+            <Link
+              to="/quote"
+              className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-voltcraft-primary to-voltcraft-secondary rounded-lg font-semibold text-white hover:opacity-90 transition-opacity glow-blue"
+            >
+              Get Instant Quote
+            </Link>
+          </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-voltcraft-gray-400 hover:text-white transition-colors"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+                    <div className="flex items-center gap-2 md:hidden">
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-gray-600 dark:text-voltcraft-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
+              {theme === 'light' ? <Moon className="w-6 h-6" /> : <Sun className="w-6 h-6" />}
+            </button>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 text-gray-600 dark:text-voltcraft-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -70,7 +88,7 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-white/10"
+            className="md:hidden glass border-t border-gray-200 dark:border-white/10"
           >
             <nav className="flex flex-col p-4 gap-2">
               {navLinks.map((link) => (
@@ -81,7 +99,7 @@ const Header = () => {
                   className={`px-4 py-3 rounded-lg font-medium transition-colors ${
                     isActive(link.path)
                       ? 'bg-voltcraft-primary/20 text-white'
-                      : 'text-voltcraft-gray-400 hover:text-white hover:bg-white/5'
+                      : 'text-gray-600 dark:text-voltcraft-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-white/5'
                   }`}
                 >
                   {link.label}

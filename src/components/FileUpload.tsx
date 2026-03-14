@@ -72,7 +72,7 @@ const FileUpload = ({ onFileAnalyzed, isAnalyzing, setIsAnalyzing }: FileUploadP
         className={`relative border-2 border-dashed rounded-2xl p-8 md:p-12 text-center cursor-pointer transition-all duration-300 ${
           isDragActive
             ? 'border-voltcraft-secondary bg-voltcraft-secondary/10'
-            : 'border-white/20 hover:border-white/30 bg-voltcraft-dark'
+            : 'border-gray-300 dark:border-white/20 hover:border-white/30 bg-white dark:bg-voltcraft-dark'
         } ${isAnalyzing ? 'pointer-events-none opacity-60' : ''}`}
       >
         <input {...getInputProps()} />
@@ -88,8 +88,8 @@ const FileUpload = ({ onFileAnalyzed, isAnalyzing, setIsAnalyzing }: FileUploadP
             >
               <Loader2 className="w-16 h-16 text-voltcraft-secondary spinner" />
               <div>
-                <p className="text-white font-semibold text-lg">Analyzing your model...</p>
-                <p className="text-voltcraft-gray-400 text-sm mt-1">
+                <p className="text-gray-900 dark:text-white font-semibold text-lg">Analyzing your model...</p>
+                <p className="text-gray-600 dark:text-voltcraft-gray-400 text-sm mt-1">
                   Calculating volume and dimensions
                 </p>
               </div>
@@ -106,8 +106,8 @@ const FileUpload = ({ onFileAnalyzed, isAnalyzing, setIsAnalyzing }: FileUploadP
                 <CheckCircle className="w-10 h-10 text-green-500" />
               </div>
               <div>
-                <p className="text-white font-semibold text-lg">{uploadedFile.name}</p>
-                <p className="text-voltcraft-gray-400 text-sm mt-1">
+                <p className="text-gray-900 dark:text-white font-semibold text-lg">{uploadedFile.name}</p>
+                <p className="text-gray-600 dark:text-voltcraft-gray-400 text-sm mt-1">
                   {formatFileSize(uploadedFile.size)}
                 </p>
               </div>
@@ -130,21 +130,21 @@ const FileUpload = ({ onFileAnalyzed, isAnalyzing, setIsAnalyzing }: FileUploadP
               className="flex flex-col items-center gap-4"
             >
               <div className={`w-20 h-20 rounded-full flex items-center justify-center transition-colors ${
-                isDragActive ? 'bg-voltcraft-secondary/20' : 'bg-voltcraft-darker'
+                isDragActive ? 'bg-voltcraft-secondary/20' : 'bg-gray-50 dark:bg-voltcraft-darker'
               }`}>
                 <Upload className={`w-10 h-10 transition-colors ${
-                  isDragActive ? 'text-voltcraft-secondary' : 'text-voltcraft-gray-400'
+                  isDragActive ? 'text-voltcraft-secondary' : 'text-gray-600 dark:text-voltcraft-gray-400'
                 }`} />
               </div>
               <div>
-                <p className="text-white font-semibold text-lg">
+                <p className="text-gray-900 dark:text-white font-semibold text-lg">
                   {isDragActive ? 'Drop your file here' : 'Drag & drop your 3D model'}
                 </p>
-                <p className="text-voltcraft-gray-400 text-sm mt-1">
+                <p className="text-gray-600 dark:text-voltcraft-gray-400 text-sm mt-1">
                   or click to browse files
                 </p>
               </div>
-              <div className="flex items-center gap-2 text-voltcraft-gray-500 text-sm">
+              <div className="flex items-center gap-2 text-gray-500 dark:text-voltcraft-gray-500 text-sm">
                 <FileText className="w-4 h-4" />
                 <span>Supports STL, OBJ, 3MF (max 100MB)</span>
               </div>

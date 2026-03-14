@@ -6,6 +6,7 @@ import QuotePage from './pages/QuotePage'
 import MaterialsPage from './pages/MaterialsPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
+import ThemeToggle from './components/ThemeToggle'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <ThemeToggle />
       </div>
     </Router>
   )
