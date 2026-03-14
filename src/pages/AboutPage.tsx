@@ -61,7 +61,7 @@ const AboutPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-3xl md:text-5xl font-display font-bold text-gray-900 dark:text-white"
           >
-            About <span className="gradient-text">Voltcraft</span>
+            About <span className="text-voltcraft-primary">Voltcraft</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -81,9 +81,9 @@ const AboutPage = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="p-8 bg-white dark:bg-voltcraft-dark rounded-2xl border border-gray-200 dark:border-voltcraft-gray-800"
+            className="p-8 bg-white dark:bg-voltcraft-dark rounded-lg border border-gray-200 dark:border-voltcraft-gray-800"
           >
-            <div className="w-12 h-12 rounded-xl bg-voltcraft-primary/20 flex items-center justify-center mb-4">
+            <div className="w-12 h-12 rounded-lg bg-voltcraft-primary/20 flex items-center justify-center mb-4">
               <Target className="w-6 h-6 text-voltcraft-primary" />
             </div>
             <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-white mb-4">Our Mission</h2>
@@ -99,9 +99,9 @@ const AboutPage = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="p-8 bg-white dark:bg-voltcraft-dark rounded-2xl border border-gray-200 dark:border-voltcraft-gray-800"
+            className="p-8 bg-white dark:bg-voltcraft-dark rounded-lg border border-gray-200 dark:border-voltcraft-gray-800"
           >
-            <div className="w-12 h-12 rounded-xl bg-voltcraft-secondary/20 flex items-center justify-center mb-4">
+            <div className="w-12 h-12 rounded-lg bg-voltcraft-secondary/20 flex items-center justify-center mb-4">
               <Award className="w-6 h-6 text-voltcraft-secondary" />
             </div>
             <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-white mb-4">Our Vision</h2>
@@ -117,7 +117,7 @@ const AboutPage = () => {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white">
-              Our <span className="gradient-text">Equipment</span>
+              Our <span className="text-voltcraft-primary">Equipment</span>
             </h2>
             <p className="mt-4 text-gray-600 dark:text-voltcraft-gray-400 max-w-2xl mx-auto">
               We use the Bambu Lab A1 Combo, one of the most advanced consumer-grade 
@@ -129,9 +129,9 @@ const AboutPage = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-voltcraft-primary/10 to-voltcraft-secondary/10 p-1"
+            className="relative overflow-hidden rounded-lg bg-voltcraft-primary/10 p-1"
           >
-            <div className="bg-white dark:bg-voltcraft-dark rounded-xl p-8 md:p-12">
+            <div className="bg-white dark:bg-voltcraft-dark rounded-lg p-8 md:p-12">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="flex items-center gap-3 mb-6">
@@ -157,7 +157,7 @@ const AboutPage = () => {
                 </div>
 
                 <div className="relative">
-                  <div className="aspect-square rounded-2xl bg-gray-100 dark:bg-voltcraft-gray-900 flex items-center justify-center overflow-hidden">
+                  <div className="aspect-square rounded-lg bg-gray-100 dark:bg-voltcraft-gray-900 flex items-center justify-center overflow-hidden">
                     <div className="text-center p-8">
                       <Box className="w-32 h-32 text-voltcraft-primary mx-auto mb-4 animate-float" />
                       <p className="text-gray-600 dark:text-voltcraft-gray-400">Bambu Lab A1 Combo</p>
@@ -166,13 +166,13 @@ const AboutPage = () => {
                   </div>
                   
                   {/* Feature badges */}
-                  <div className="absolute -right-4 top-8 glass rounded-xl p-3">
+                  <div className="absolute -right-4 top-8 glass rounded-lg p-3">
                     <div className="flex items-center gap-2">
                       <CheckCircle className="w-5 h-5 text-green-500" />
                       <span className="text-sm text-gray-900 dark:text-white">Multi-Color</span>
                     </div>
                   </div>
-                  <div className="absolute -left-4 bottom-8 glass rounded-xl p-3">
+                  <div className="absolute -left-4 bottom-8 glass rounded-lg p-3">
                     <div className="flex items-center gap-2">
                       <Zap className="w-5 h-5 text-yellow-500" />
                       <span className="text-sm text-gray-900 dark:text-white">500mm/s Speed</span>
@@ -188,7 +188,7 @@ const AboutPage = () => {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white">
-              What We <span className="gradient-text">Offer</span>
+              What We <span className="text-voltcraft-primary">Offer</span>
             </h2>
             <p className="mt-4 text-gray-600 dark:text-voltcraft-gray-400 max-w-2xl mx-auto">
               From quick prototypes to small production runs, we've got you covered.
@@ -203,9 +203,9 @@ const AboutPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-6 bg-white dark:bg-voltcraft-dark rounded-2xl border border-gray-200 dark:border-voltcraft-gray-800 hover:border-gray-300 dark:border-voltcraft-gray-700 transition-colors"
+                className="p-6 bg-white dark:bg-voltcraft-dark rounded-lg border border-gray-200 dark:border-voltcraft-gray-800 hover:border-gray-300 dark:border-voltcraft-gray-700 transition-colors"
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-voltcraft-primary/20 to-voltcraft-secondary/20 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-voltcraft-primary/20 to-voltcraft-secondary/20 flex items-center justify-center mb-4">
                   <service.icon className="w-6 h-6 text-voltcraft-primary" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{service.title}</h3>
@@ -219,7 +219,7 @@ const AboutPage = () => {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white">
-              Our <span className="gradient-text">Journey</span>
+              Our <span className="text-voltcraft-primary">Journey</span>
             </h2>
           </div>
 
@@ -255,7 +255,7 @@ const AboutPage = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="p-8 md:p-12 bg-white dark:bg-voltcraft-dark rounded-2xl border border-gray-200 dark:border-voltcraft-gray-800">
+          <div className="p-8 md:p-12 bg-white dark:bg-voltcraft-dark rounded-lg border border-gray-200 dark:border-voltcraft-gray-800">
             <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900 dark:text-white mb-4">
               Ready to start your project?
             </h2>
@@ -265,7 +265,7 @@ const AboutPage = () => {
             </p>
             <Link
               to="/quote"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-voltcraft-primary to-voltcraft-secondary rounded-xl font-semibold text-white hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-voltcraft-primary rounded-lg text-black font-semibold text-white hover:opacity-90 transition-opacity"
             >
               Get Started
               <ArrowRight className="w-5 h-5" />

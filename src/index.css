@@ -2,97 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 4%;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+  }
+
+  body {
+    @apply bg-white text-gray-900 dark:bg-black dark:text-white font-sans antialiased;
+    background-color: var(--background);
+    color: var(--foreground);
+  }
 }
 
-html {
-  scroll-behavior: smooth;
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-[#0A0A0A]/70 backdrop-blur-xl border-b border-gray-200 dark:border-[#222];
+  }
+  
+  .glass-card {
+    @apply bg-white dark:bg-[#0A0A0A] border border-gray-200 dark:border-[#222] rounded-lg shadow-sm;
+  }
 }
 
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  @apply bg-gray-50 dark:bg-[#060912];
-  @apply text-gray-900 dark:text-[#F5F7FA];
-  min-height: 100vh;
-}
-
-/* Custom scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-200 dark:bg-[#0A0F1C];
+  @apply bg-transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-400 dark:bg-[#3E4C59];
-  border-radius: 4px;
+  @apply bg-gray-300 dark:bg-[#333] rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-500 dark:bg-[#616E7C];
+  @apply bg-gray-400 dark:bg-[#444];
 }
 
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #0066FF 0%, #00D4AA 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Glass effect */
-.glass {
-  @apply bg-white/70 dark:bg-[#0A0F1C]/70;
-  backdrop-filter: blur(20px);
-  @apply border border-gray-200 dark:border-white/10;
-}
-
-/* Glow effects */
-.glow-blue {
-  box-shadow: 0 0 30px rgba(0, 102, 255, 0.3);
-}
-
-.glow-green {
-  box-shadow: 0 0 30px rgba(0, 212, 170, 0.3);
-}
-
-/* File drop zone */
-.dropzone-active {
-  border-color: #0066FF !important;
-  background: rgba(0, 102, 255, 0.1) !important;
-}
-
-/* 3D canvas container */
-.model-viewer {
-  /* managed in component or apply conditional */
-}
-
-/* Loading spinner */
-@keyframes spinner {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.spinner {
-  animation: spinner 1s linear infinite;
-}
-
-/* Pulse animation for prices */
-@keyframes price-pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-.price-animate {
-  animation: price-pulse 0.3s ease-out;
+::selection {
+  @apply bg-voltcraft-primary/30 text-current;
 }
