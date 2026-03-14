@@ -134,15 +134,15 @@ const HomePage = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                className="absolute -left-4 md:-left-16 top-1/4 glass rounded-xl p-4"
+                className="absolute -left-1 -top-3 z-10 w-[46%] max-w-[180px] min-h-[64px] sm:w-auto sm:max-w-none sm:min-h-0 sm:-left-4 md:-left-16 sm:top-1/4 glass rounded-xl p-2.5 sm:p-4"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-voltcraft-primary/20 flex items-center justify-center">
-                    <Cpu className="w-5 h-5 text-voltcraft-primary" />
+                <div className="flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-lg bg-voltcraft-primary/20 flex items-center justify-center">
+                    <Cpu className="w-4 h-4 text-voltcraft-primary" />
                   </div>
                   <div>
                     <p className="text-xs text-gray-600 dark:text-voltcraft-gray-400">Powered by</p>
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white">Bambu Lab A1</p>
+                    <p className="text-[13px] leading-tight sm:text-sm font-semibold text-gray-900 dark:text-white">Bambu Lab A1</p>
                   </div>
                 </div>
               </motion.div>
@@ -151,15 +151,15 @@ const HomePage = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                className="absolute -right-4 md:-right-16 bottom-1/4 glass rounded-xl p-4"
+                className="absolute -right-1 -bottom-8 z-10 w-[46%] max-w-[180px] min-h-[64px] sm:w-auto sm:max-w-none sm:min-h-0 sm:-right-4 md:-right-16 sm:bottom-1/4 glass rounded-xl p-2.5 sm:p-4"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-voltcraft-secondary/20 flex items-center justify-center">
-                    <Layers className="w-5 h-5 text-voltcraft-secondary" />
+                <div className="flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-lg bg-voltcraft-secondary/20 flex items-center justify-center">
+                    <Layers className="w-4 h-4 text-voltcraft-secondary" />
                   </div>
                   <div>
                     <p className="text-xs text-gray-600 dark:text-voltcraft-gray-400">Build Volume</p>
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white">256 × 256 × 256mm</p>
+                    <p className="text-[13px] leading-tight sm:text-sm font-semibold text-gray-900 dark:text-white">256 × 256 × 256mm</p>
                   </div>
                 </div>
               </motion.div>

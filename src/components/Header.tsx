@@ -64,18 +64,18 @@ const Header = () => {
             </Link>
           </div>
 
-                    <div className="flex items-center gap-2 md:hidden">
-            <button
-              onClick={toggleTheme}
-              className="p-2 text-gray-600 dark:text-voltcraft-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-            >
-              {theme === 'light' ? <Moon className="w-6 h-6" /> : <Sun className="w-6 h-6" />}
-            </button>
+                    <div className="flex w-full items-center justify-between md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 text-gray-600 dark:text-voltcraft-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-gray-600 dark:text-voltcraft-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
+              {theme === 'light' ? <Moon className="w-6 h-6" /> : <Sun className="w-6 h-6" />}
             </button>
           </div>
         </div>
