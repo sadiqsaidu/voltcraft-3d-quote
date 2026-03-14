@@ -24,6 +24,7 @@ export interface PrintSettings {
   infillPercentage: number // 0-100
   supportEnabled: boolean
   quantity: number
+  color: string
 }
 
 export interface QuoteResult {

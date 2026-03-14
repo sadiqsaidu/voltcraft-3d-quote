@@ -26,7 +26,8 @@ const QuotePage = () => {
     layerHeight: 0.2,
     infillPercentage: 20,
     supportEnabled: false,
-    quantity: 1
+    quantity: 1,
+    color: getDefaultMaterial().colors[0]
   })
   const [quote, setQuote] = useState<QuoteResult | null>(null)
   const [isAnalyzing, setIsAnalyzing] = useState(false)
@@ -305,7 +306,12 @@ const QuotePage = () => {
                   {/* Material Selector */}
                   <MaterialSelector
                     selectedMaterial={material}
-                    onSelectMaterial={setMaterial}
+                    onSelectMaterial={(newMaterial) => {
+                      setMaterial(newMaterial)
+                      if (!newMaterial.colors.includes(settings.color)) {
+                        setSettings(prev => ({ ...prev, color: newMaterial.colors[0] || 'Black' }))
+                      }
+                    }}
                   />
 
                   {/* Print Settings */}
@@ -333,6 +339,7 @@ const QuotePage = () => {
                             <PrintSettingsForm
                               settings={settings}
                               onSettingsChange={setSettings}
+                              availableColors={material.colors}
                             />
                           </div>
                         </motion.div>

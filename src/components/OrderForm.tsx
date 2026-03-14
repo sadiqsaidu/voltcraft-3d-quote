@@ -129,7 +129,7 @@ const OrderForm = ({ fileName, analysis, material, settings, quote }: OrderFormP
           </div>
           <div>
             <span className="text-voltcraft-gray-500">Material</span>
-            <p className="text-white">{material.shortName}</p>
+            <p className="text-white">{material.shortName} ({settings.color})</p>
           </div>
           <div>
             <span className="text-voltcraft-gray-500">Quantity</span>

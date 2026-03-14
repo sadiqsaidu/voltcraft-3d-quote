@@ -117,31 +117,36 @@ export const getRecommendedSettings = (useCase: string): PrintSettings => {
       layerHeight: 0.28,
       infillPercentage: 15,
       supportEnabled: false,
-      quantity: 1
+      quantity: 1,
+      color: 'Black'
     },
     standard: {
       layerHeight: 0.2,
       infillPercentage: 20,
       supportEnabled: false,
-      quantity: 1
+      quantity: 1,
+      color: 'Black'
     },
     quality: {
       layerHeight: 0.12,
       infillPercentage: 25,
       supportEnabled: false,
-      quantity: 1
+      quantity: 1,
+      color: 'Black'
     },
     functional: {
       layerHeight: 0.2,
       infillPercentage: 40,
       supportEnabled: false,
-      quantity: 1
+      quantity: 1,
+      color: 'Black'
     },
     strong: {
       layerHeight: 0.16,
       infillPercentage: 60,
       supportEnabled: false,
-      quantity: 1
+      quantity: 1,
+      color: 'Black'
     }
   }
   

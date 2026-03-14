@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
 import { PrintSettings } from '../types'
-import { Layers, Grid3X3, Combine, Hash } from 'lucide-react'
+import { Layers, Grid3X3, Combine, Hash, Palette } from 'lucide-react'
 
 interface PrintSettingsFormProps {
   settings: PrintSettings
   onSettingsChange: (settings: PrintSettings) => void
+  availableColors: string[]
 }
 
 const layerHeightOptions = [
@@ -23,7 +24,7 @@ const infillPresets = [
   { value: 80, label: 'Solid', description: 'Maximum strength' },
 ]
 
-const PrintSettingsForm = ({ settings, onSettingsChange }: PrintSettingsFormProps) => {
+const PrintSettingsForm = ({ settings, onSettingsChange, availableColors }: PrintSettingsFormProps) => {
   const updateSetting = <K extends keyof PrintSettings>(
     key: K,
     value: PrintSettings[K]
@@ -35,6 +36,37 @@ const PrintSettingsForm = ({ settings, onSettingsChange }: PrintSettingsFormProp
     <div className="space-y-6">
       <h3 className="text-lg font-semibold text-white">Print Settings</h3>
       
+      {/* Color */}
+      <div className="space-y-3">
+        <label className="flex items-center gap-2 text-sm font-medium text-voltcraft-gray-300">
+          <Palette className="w-4 h-4 text-voltcraft-primary" />
+          Material Color
+        </label>
+        <div className="flex flex-wrap gap-2">
+          {availableColors.map((color) => (
+            <motion.button
+              key={color}
+              onClick={() => updateSetting('color', color)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                settings.color === color
+                  ? 'bg-voltcraft-primary text-black'
+                  : 'bg-voltcraft-dark border-2 border-voltcraft-gray-800 text-white hover:border-voltcraft-gray-600'
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                <div 
+                  className="w-3 h-3 rounded-full border border-voltcraft-gray-600 shadow-sm"
+                  style={{ backgroundColor: color.toLowerCase() === 'white' ? '#f0f0f0' : color.toLowerCase() }}
+                />
+                {color}
+              </div>
+            </motion.button>
+          ))}
+        </div>
+      </div>
+
       {/* Layer Height */}
       <div className="space-y-3">
         <label className="flex items-center gap-2 text-sm font-medium text-voltcraft-gray-300">
