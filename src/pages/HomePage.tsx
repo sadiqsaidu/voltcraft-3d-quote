@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Upload, Cpu, Watch, ShieldCheck } from 'lucide-react'
@@ -36,10 +35,10 @@ export default function HomePage() {
         Middle: 3D Printer overlapping absolute
         Right: 3 Mini info cards
       */}
-      <section className="relative w-full flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch justify-between mb-24">
+      <section className="relative w-full grid grid-cols-1 lg:grid-cols-10 gap-6 lg:gap-8 items-start lg:items-stretch mb-24">
         
         {/* Left Column: Main Value Prop */}
-        <div className="flex-1 brutal-border border bg-gray-50 dark:bg-[#141414] p-8 lg:p-12 relative flex flex-col justify-center min-h-[500px] z-10 w-full lg:w-1/2">
+        <div className="brutal-border border bg-gray-50 dark:bg-[#141414] p-8 lg:p-12 relative flex flex-col justify-center min-h-[500px] z-10 w-full lg:col-span-7">
           <div className="grid-node node-tl"></div>
           <div className="grid-node node-tr"></div>
           <div className="grid-node node-bl"></div>
@@ -86,23 +85,25 @@ export default function HomePage() {
         </div>
 
         {/* Right Column: Key Stats/Cards */}
-        <div className="flex-1 flex flex-col gap-6 lg:gap-8 z-10 w-full lg:w-1/2">
+        <div className="w-full lg:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-6 z-10 lg:flex lg:flex-col lg:gap-4 lg:h-full">
           {[
             { title: "24h", subtitle: "Average Turnaround", desc: "For standard PLA/PETG parts" },
             { title: "0.05mm", subtitle: "Layer Resolution", desc: "Ultra-fine detail printing" },
-            { title: "15+", subtitle: "Material Types", desc: "Engineering & visual grades" }
+            { title: "PLA + PETG", subtitle: "Available Materials", desc: "Two reliable options right now" }
           ].map((stat, i) => (
             <motion.div 
               key={i}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 + (i * 0.1) }}
-              className="brutal-border border bg-gray-50 dark:bg-[#141414] p-6 flex-1 relative flex flex-col justify-center"
+              className="brutal-border border bg-gray-50 dark:bg-[#141414] p-4 sm:p-5 relative flex flex-col justify-center w-full lg:flex-1"
             >
               <div className="grid-node node-tl"></div>
               <div className="grid-node node-br"></div>
               
-              <h3 className="text-3xl lg:text-4xl font-bold text-voltcraft-primary mb-1">{stat.title}</h3>
+              <h3 className={`font-bold text-voltcraft-primary mb-1 ${i === 2 ? 'text-2xl lg:text-3xl' : 'text-3xl lg:text-4xl'}`}>
+                {stat.title}
+              </h3>
               <p className="font-bold text-gray-900 dark:text-white mb-2">{stat.subtitle}</p>
               <p className="text-sm text-gray-500">{stat.desc}</p>
             </motion.div>

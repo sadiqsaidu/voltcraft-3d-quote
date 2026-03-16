@@ -26,9 +26,9 @@ const Header = () => {
         <div className="flex-1 flex justify-between items-center brutal-border border bg-white dark:bg-[#141414] px-6 lg:px-8 relative">
           <Link to="/" className="flex items-center gap-3">
             <img 
-              src="/media/logo.png" 
+              src={theme === 'light' ? '/media/logo-light.png' : '/media/logo-dark.png'}
               alt="Voltcraft Logo" 
-              className="h-6 w-auto"
+              className="h-10 md:h-12 w-auto object-contain"
               // Fallback text if the image fails to load
               onError={(e) => { 
                 e.currentTarget.style.display = 'none'; 
