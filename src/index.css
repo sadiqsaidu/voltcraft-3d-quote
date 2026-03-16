@@ -4,13 +4,13 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%; /* Very light blue-gray */
-    --foreground: 222 47% 11%;
+    --background: 0 0% 98%; 
+    --foreground: 0 0% 5%;
   }
 
   .dark {
-    --background: 222 47% 11%; /* Very dark navy #020617 */
-    --foreground: 210 40% 98%;
+    --background: 0 0% 4%; /* Pure black like the screenshot */
+    --foreground: 0 0% 90%; /* Slight gray text */
   }
 
   body {
@@ -18,36 +18,40 @@
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-widest uppercase;
+  }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/70 dark:bg-voltcraft-dark/70 backdrop-blur-xl border-b border-voltcraft-gray-200 dark:border-voltcraft-border;
+    @apply bg-black/80 backdrop-blur-xl border-b border-[#222];
   }
   
   .glass-card {
-    @apply bg-white dark:bg-voltcraft-dark border border-voltcraft-gray-200 dark:border-voltcraft-border rounded-lg shadow-sm;
+    @apply bg-[#0A0A0A] border border-[#222] rounded-md shadow-sm;
   }
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar to match terminal aesthetic */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-transparent;
+  @apply bg-transparent border-l border-[#222];
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-voltcraft-gray-300 dark:bg-voltcraft-gray-700 rounded-full;
+  @apply bg-[#333] rounded-none;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-voltcraft-gray-400 dark:bg-voltcraft-gray-600;
+  @apply bg-[#555];
 }
 
 ::selection {
-  @apply bg-voltcraft-primary/30 text-current;
+  @apply bg-voltcraft-primary/50 text-current;
 }

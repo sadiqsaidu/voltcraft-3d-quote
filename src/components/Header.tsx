@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sun, Moon, Hexagon } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
 
 const Header = () => {
@@ -9,69 +9,68 @@ const Header = () => {
   const { theme, toggleTheme } = useTheme()
   const location = useLocation()
 
-  // Minimized navigation as requested
   const navLinks = [
-    { path: '/quote', label: 'Quote' },
+    { path: '/', label: 'Home' },
     { path: '/materials', label: 'Materials' },
   ]
 
   const isActive = (path: string) => location.pathname === path
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-voltcraft-dark/95 backdrop-blur-sm border-b border-gray-200 dark:border-voltcraft-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-[#000000]/90 backdrop-blur-md border-b border-gray-200 dark:border-[#222]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-2">
-            <Hexagon className="w-5 h-5 text-voltcraft-primary" />
-            <span className="font-medium text-gray-900 dark:text-gray-100">
-              Voltcraft
+            <span className="font-display text-xl tracking-widest text-gray-900 dark:text-white uppercase transition-colors hover:text-voltcraft-primary">
+              VOLTCRAFT
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`text-sm transition-colors ${
-                  isActive(link.path)
-                    ? 'text-voltcraft-primary font-medium'
-                    : 'text-gray-500 hover:text-gray-900 dark:hover:text-gray-300'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+          <div className="hidden md:flex items-center gap-8">
+            <nav className="flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-sm tracking-wide transition-colors hover:text-voltcraft-primary ${
+                    isActive(link.path)
+                      ? 'text-gray-900 dark:text-white'
+                      : 'text-gray-500 dark:text-gray-400'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
 
-          {/* CTA & Theme */}
-          <div className="hidden md:flex items-center gap-4">
-            <button
-              onClick={toggleTheme}
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-            </button>
-            <Link
-              to="/quote"
-              className="px-5 py-2 bg-voltcraft-primary text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
-            >
-              Get Quote
-            </Link>
+            <div className="flex items-center gap-4 border-l border-gray-200 dark:border-[#222] pl-8">
+              <button
+                onClick={toggleTheme}
+                className="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
+                aria-label="Toggle theme"
+              >
+                {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+              </button>
+              <Link
+                to="/quote"
+                className="px-6 py-2.5 bg-gray-100 dark:bg-transparent border border-transparent dark:border-[#333] text-gray-900 dark:text-white text-sm font-bold tracking-widest uppercase hover:border-voltcraft-primary hover:text-voltcraft-primary transition-all rounded"
+              >
+                Get Quote
+              </Link>
+            </div>
           </div>
 
-          <div className="flex w-full items-center justify-end md:hidden gap-4">
+          <div className="flex items-center justify-end md:hidden gap-4">
             <button
               onClick={toggleTheme}
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
+              className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
             >
               {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
+              className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
             >
               {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -86,17 +85,17 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-gray-200 dark:border-voltcraft-border bg-white dark:bg-voltcraft-dark"
+            className="md:hidden border-t border-gray-200 dark:border-[#222] bg-white dark:bg-[#000]"
           >
-            <nav className="flex flex-col p-4 gap-2">
+            <nav className="flex flex-col px-4 py-6 gap-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`px-4 py-3 rounded-lg text-sm transition-colors ${
+                  className={`text-sm tracking-wide transition-colors ${
                     isActive(link.path)
-                      ? 'bg-gray-50 dark:bg-voltcraft-gray-800 text-voltcraft-primary font-medium'
+                      ? 'text-gray-900 dark:text-white'
                       : 'text-gray-500 dark:text-gray-400'
                   }`}
                 >
@@ -106,7 +105,7 @@ const Header = () => {
               <Link
                 to="/quote"
                 onClick={() => setIsMenuOpen(false)}
-                className="mt-2 px-4 py-3 bg-voltcraft-primary text-white rounded-lg text-sm font-medium text-center"
+                className="mt-4 px-6 py-3 bg-gray-100 dark:bg-transparent border border-gray-200 dark:border-[#333] text-gray-900 dark:text-white text-sm font-bold tracking-widest uppercase hover:border-voltcraft-primary text-center transition-all rounded"
               >
                 Get Quote
               </Link>

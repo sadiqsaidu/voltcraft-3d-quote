@@ -85,7 +85,7 @@ const QuotePage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Header */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white">
+          <h1 className="text-3xl md:text-4xl font-display font-mono font-bold uppercase tracking-widest text-gray-900 dark:text-white">
             Get Your <span className="text-voltcraft-primary">Instant Quote</span>
           </h1>
           <p className="mt-4 text-gray-600 dark:text-voltcraft-gray-400 max-w-2xl mx-auto">

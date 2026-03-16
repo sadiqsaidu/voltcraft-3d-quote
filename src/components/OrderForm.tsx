@@ -86,7 +86,7 @@ const OrderForm = ({ fileName, analysis, material, settings, quote }: OrderFormP
         <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
           <CheckCircle className="w-12 h-12 text-green-500" />
         </div>
-        <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white mb-2">
+        <h3 className="text-2xl font-display font-mono font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-2">
           Quote Request Submitted!
         </h3>
         <p className="text-gray-600 dark:text-voltcraft-gray-400 mb-6 max-w-md mx-auto">
@@ -111,12 +111,12 @@ const OrderForm = ({ fileName, analysis, material, settings, quote }: OrderFormP
       className="space-y-6"
     >
       <div className="flex items-center justify-between">
-        <h3 className="text-xl font-display font-bold text-gray-900 dark:text-white">
+        <h3 className="text-xl font-display font-mono font-bold uppercase tracking-widest text-gray-900 dark:text-white">
           Submit Print Request
         </h3>
         <div className="text-right">
           <p className="text-sm text-gray-600 dark:text-voltcraft-gray-400">Estimated Total</p>
-          <p className="text-xl font-bold text-voltcraft-primary">{formatPrice(quote.totalCost)}</p>
+          <p className="text-xl font-mono font-bold uppercase tracking-widest text-voltcraft-primary">{formatPrice(quote.totalCost)}</p>
         </div>
       </div>
 

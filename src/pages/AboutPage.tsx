@@ -59,7 +59,7 @@ const AboutPage = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl md:text-5xl font-display font-bold text-gray-900 dark:text-white"
+            className="text-3xl md:text-5xl font-display font-mono font-bold uppercase tracking-widest text-gray-900 dark:text-white"
           >
             About <span className="text-voltcraft-primary">Voltcraft</span>
           </motion.h1>
@@ -86,7 +86,7 @@ const AboutPage = () => {
             <div className="w-12 h-12 rounded-lg bg-voltcraft-primary/20 flex items-center justify-center mb-4">
               <Target className="w-6 h-6 text-voltcraft-primary" />
             </div>
-            <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-white mb-4">Our Mission</h2>
+            <h2 className="text-2xl font-display font-mono font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-4">Our Mission</h2>
             <p className="text-gray-600 dark:text-voltcraft-gray-400 leading-relaxed">
               To democratize access to advanced manufacturing technology in Nigeria. 
               We believe everyone should have the ability to bring their ideas to life, 
@@ -104,7 +104,7 @@ const AboutPage = () => {
             <div className="w-12 h-12 rounded-lg bg-voltcraft-secondary/20 flex items-center justify-center mb-4">
               <Award className="w-6 h-6 text-voltcraft-secondary" />
             </div>
-            <h2 className="text-2xl font-display font-bold text-gray-900 dark:text-white mb-4">Our Vision</h2>
+            <h2 className="text-2xl font-display font-mono font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-4">Our Vision</h2>
             <p className="text-gray-600 dark:text-voltcraft-gray-400 leading-relaxed">
               To become the leading 3D printing and electronics hub in West Africa, 
               known for quality, reliability, and exceptional customer service. We're 
@@ -116,7 +116,7 @@ const AboutPage = () => {
         {/* The Printer */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white">
+            <h2 className="text-3xl font-display font-mono font-bold uppercase tracking-widest text-gray-900 dark:text-white">
               Our <span className="text-voltcraft-primary">Equipment</span>
             </h2>
             <p className="mt-4 text-gray-600 dark:text-voltcraft-gray-400 max-w-2xl mx-auto">
@@ -136,7 +136,7 @@ const AboutPage = () => {
                 <div>
                   <div className="flex items-center gap-3 mb-6">
                     <Cpu className="w-8 h-8 text-voltcraft-primary" />
-                    <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white">
+                    <h3 className="text-2xl font-display font-mono font-bold uppercase tracking-widest text-gray-900 dark:text-white">
                       Bambu Lab A1 Combo
                     </h3>
                   </div>
@@ -187,7 +187,7 @@ const AboutPage = () => {
         {/* Services */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white">
+            <h2 className="text-3xl font-display font-mono font-bold uppercase tracking-widest text-gray-900 dark:text-white">
               What We <span className="text-voltcraft-primary">Offer</span>
             </h2>
             <p className="mt-4 text-gray-600 dark:text-voltcraft-gray-400 max-w-2xl mx-auto">
@@ -218,7 +218,7 @@ const AboutPage = () => {
         {/* Timeline */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white">
+            <h2 className="text-3xl font-display font-mono font-bold uppercase tracking-widest text-gray-900 dark:text-white">
               Our <span className="text-voltcraft-primary">Journey</span>
             </h2>
           </div>
@@ -256,7 +256,7 @@ const AboutPage = () => {
           className="text-center"
         >
           <div className="p-8 md:p-12 bg-white dark:bg-voltcraft-dark rounded-lg border border-gray-200 dark:border-voltcraft-gray-800">
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-display font-mono font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-4">
               Ready to start your project?
             </h2>
             <p className="text-gray-600 dark:text-voltcraft-gray-400 mb-8 max-w-xl mx-auto">

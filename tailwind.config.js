@@ -11,9 +11,9 @@ export default {
         voltcraft: {
           primary: '#2563EB', // Blue 600 - true vibrant blue like the left of the gradient
           secondary: '#00D4FF', // Cyan
-          dark: '#0B0F19', // Deep navy dark mode background
-          darker: '#020617', // Even darker navy (slate-950)
-          border: '#1E293B', // Slate grey border
+          dark: '#030303', // Deep navy dark mode background -> making it slightly blacker for the launcher vibe
+          darker: '#000000', // Even darker for pure terminal black
+          border: '#111111', // Very faint border
           gray: {
             100: '#F1F5F9', // slate-100
             200: '#E2E8F0',
@@ -28,7 +28,8 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['JetBrains Mono', 'monospace'],
+        display: ['Silkscreen', 'cursive'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
