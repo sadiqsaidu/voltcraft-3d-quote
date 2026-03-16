@@ -9,36 +9,27 @@ export default {
     extend: {
       colors: {
         voltcraft: {
-          primary: '#2563EB', // Blue 600 - true vibrant blue like the left of the gradient
-          secondary: '#00D4FF', // Cyan
-          dark: '#030303', // Deep navy dark mode background -> making it slightly blacker for the launcher vibe
-          darker: '#000000', // Even darker for pure terminal black
-          border: '#111111', // Very faint border
+          primary: '#F0503D', // Coral Red from your screenshot
+          secondary: '#F87060', 
+          dark: '#141414', // Inner component black
+          darker: '#0D0D0D', // Very deep base background
+          border: '#333333', // Thicker gray used in brutalist grids
           gray: {
-            100: '#F1F5F9', // slate-100
+            100: '#F1F5F9',
             200: '#E2E8F0',
             300: '#CBD5E1',
             400: '#94A3B8',
             500: '#64748B',
             600: '#475569',
             700: '#334155',
-            800: '#1E293B',
-            900: '#0F172A'
+            800: '#1e1e1e', // Mapped cleanly for brutalist
+            900: '#141414'
           }
         }
       },
       fontFamily: {
-        sans: ['JetBrains Mono', 'monospace'],
-        display: ['Silkscreen', 'cursive'],
-      },
-      animation: {
-        'float': 'float 6s ease-in-out infinite',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
-        }
+        sans: ['Outfit', 'sans-serif'],
+        display: ['Outfit', 'sans-serif'],
       }
     },
   },

@@ -102,7 +102,7 @@ const ContactPage = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white"
+            className="text-3xl md:text-4xl  font-bold text-gray-900 dark:text-white"
           >
             Get in <span className="text-voltcraft-primary">Touch</span>
           </motion.h1>
@@ -178,7 +178,7 @@ const ContactPage = () => {
                   <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="w-12 h-12 text-green-500" />
                   </div>
-                  <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-2xl  font-bold text-gray-900 dark:text-white mb-2">
                     Message Sent!
                   </h3>
                   <p className="text-gray-600 dark:text-voltcraft-gray-400 mb-6">
@@ -286,7 +286,7 @@ const ContactPage = () => {
         {/* FAQs */}
         <div>
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white">
+            <h2 className="text-3xl  font-bold text-gray-900 dark:text-white">
               Frequently Asked <span className="text-voltcraft-primary">Questions</span>
             </h2>
             <p className="mt-4 text-gray-600 dark:text-voltcraft-gray-400">

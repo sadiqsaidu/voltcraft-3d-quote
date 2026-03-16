@@ -4,13 +4,14 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%; 
-    --foreground: 0 0% 5%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 8%;
   }
 
   .dark {
-    --background: 0 0% 4%; /* Pure black like the screenshot */
-    --foreground: 0 0% 90%; /* Slight gray text */
+    /* Matches deep brutalist black #121212 ish */
+    --background: 0 0% 7%; 
+    --foreground: 0 0% 98%;
   }
 
   body {
@@ -18,40 +19,49 @@
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-widest uppercase;
-  }
 }
 
 @layer utilities {
+  .brutal-border {
+    @apply border-gray-300 dark:border-white/15;
+  }
+  
   .glass {
-    @apply bg-black/80 backdrop-blur-xl border-b border-[#222];
+    @apply bg-white/90 dark:bg-[#141414]/90 backdrop-blur-xl brutal-border border-b;
   }
   
   .glass-card {
-    @apply bg-[#0A0A0A] border border-[#222] rounded-md shadow-sm;
+    @apply bg-white dark:bg-[#141414] brutal-border border rounded-none shadow-sm relative;
   }
+
+  /* Brutalist Nodes for Grid Intersections */
+  .grid-node {
+    @apply absolute w-1.5 h-1.5 bg-black dark:bg-white z-20 pointer-events-none;
+  }
+  .node-tl { @apply -top-[3px] -left-[3px]; }
+  .node-tr { @apply -top-[3px] -right-[3px]; }
+  .node-bl { @apply -bottom-[3px] -left-[3px]; }
+  .node-br { @apply -bottom-[3px] -right-[3px]; }
 }
 
-/* Custom Scrollbar to match terminal aesthetic */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-transparent border-l border-[#222];
+  @apply bg-transparent border-l border-gray-300 dark:border-white/10;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-[#333] rounded-none;
+  @apply bg-voltcraft-gray-400 dark:bg-voltcraft-gray-700 rounded-none;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-[#555];
+  @apply bg-voltcraft-primary;
 }
 
 ::selection {
-  @apply bg-voltcraft-primary/50 text-current;
+  @apply bg-voltcraft-primary/40 text-current;
 }

@@ -73,7 +73,7 @@ Please confirm next steps. Thank you.
         
         <div className="relative bg-white dark:bg-voltcraft-dark rounded-lg p-6 md:p-8">
           <div className="flex items-center justify-between mb-6">
-            <h3 className="text-xl font-display font-bold text-gray-900 dark:text-white">Your Quote</h3>
+            <h3 className="text-xl  font-bold text-gray-900 dark:text-white">Your Quote</h3>
             <span className="px-3 py-1 rounded-full bg-voltcraft-primary/20 text-voltcraft-primary text-sm font-medium">
               Instant Quote
             </span>
@@ -86,7 +86,7 @@ Please confirm next steps. Thank you.
               key={quote.totalCost}
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              className="text-5xl md:text-6xl font-display font-bold text-voltcraft-primary"
+              className="text-5xl md:text-6xl  font-bold text-voltcraft-primary"
             >
               {formatPrice(quote.totalCost)}
             </motion.div>

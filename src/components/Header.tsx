@@ -11,105 +11,114 @@ const Header = () => {
 
   const navLinks = [
     { path: '/', label: 'Home' },
+    { path: '/quote', label: 'Services' },
     { path: '/materials', label: 'Materials' },
+    { path: '/contact', label: 'Contact' },
   ]
 
   const isActive = (path: string) => location.pathname === path
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-[#000000]/90 backdrop-blur-md border-b border-gray-200 dark:border-[#222]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center gap-2">
-            <span className="font-display text-xl tracking-widest text-gray-900 dark:text-white uppercase transition-colors hover:text-voltcraft-primary">
-              VOLTCRAFT
-            </span>
+    <header className="w-full relative z-50 pt-2 lg:pt-6 pb-2 px-4 lg:px-8 bg-transparent">
+      <div className="max-w-[1500px] mx-auto flex justify-between items-stretch gap-4 md:gap-8 h-20">
+        
+        {/* Left Nav Box - Enclosed in Brutalist Border */}
+        <div className="flex-1 flex justify-between items-center brutal-border border bg-white dark:bg-[#141414] px-6 lg:px-8 relative">
+          <Link to="/" className="flex items-center gap-3">
+            <img 
+              src="/media/logo.png" 
+              alt="Voltcraft Logo" 
+              className="h-6 w-auto"
+              // Fallback text if the image fails to load
+              onError={(e) => { 
+                e.currentTarget.style.display = 'none'; 
+                e.currentTarget.nextElementSibling?.classList.remove('hidden'); 
+              }} 
+            />
+            <div className="hidden font-bold text-xl text-gray-900 dark:text-white items-center gap-2">
+              <span className="w-4 h-4 bg-voltcraft-primary inline-block rounded-sm"></span>
+              Voltcraft
+            </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <nav className="flex items-center gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`text-sm tracking-wide transition-colors hover:text-voltcraft-primary ${
-                    isActive(link.path)
-                      ? 'text-gray-900 dark:text-white'
-                      : 'text-gray-500 dark:text-gray-400'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-
-            <div className="flex items-center gap-4 border-l border-gray-200 dark:border-[#222] pl-8">
-              <button
-                onClick={toggleTheme}
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
-                aria-label="Toggle theme"
-              >
-                {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-              </button>
+          {/* Desktop Links */}
+          <nav className="hidden md:flex items-center gap-8 lg:gap-12">
+            {navLinks.map((link) => (
               <Link
-                to="/quote"
-                className="px-6 py-2.5 bg-gray-100 dark:bg-transparent border border-transparent dark:border-[#333] text-gray-900 dark:text-white text-sm font-bold tracking-widest uppercase hover:border-voltcraft-primary hover:text-voltcraft-primary transition-all rounded"
+                key={link.path}
+                to={link.path}
+                className={`text-[15px] transition-colors ${
+                  isActive(link.path)
+                    ? 'text-voltcraft-primary font-medium'
+                    : 'text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white'
+                }`}
               >
-                Get Quote
+                {link.label}
               </Link>
-            </div>
-          </div>
+            ))}
+          </nav>
 
-          <div className="flex items-center justify-end md:hidden gap-4">
+          {/* Mobile Toggles */}
+          <div className="md:hidden flex items-center gap-4">
             <button
               onClick={toggleTheme}
-              className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
+              className="text-gray-600 dark:text-gray-300 transition-colors"
             >
               {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
+              className="text-gray-600 dark:text-gray-300 transition-colors"
             >
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
+
+        {/* Right Action Box - Desktop Only */}
+        <div className="hidden md:flex items-center brutal-border border bg-white dark:bg-[#141414] group hover:border-voltcraft-primary transition-colors">
+          <button
+            onClick={toggleTheme}
+            className="px-6 h-full flex items-center justify-center brutal-border border-r text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+          </button>
+          <Link
+            to="/quote"
+            className="px-8 h-full flex items-center justify-center text-gray-900 dark:text-white font-medium hover:text-voltcraft-primary transition-colors whitespace-nowrap"
+          >
+            Get Instant Quote
+          </Link>
+        </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Nav Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-gray-200 dark:border-[#222] bg-white dark:bg-[#000]"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="md:hidden absolute top-24 left-4 right-4 z-40 brutal-border border bg-white dark:bg-[#141414] p-6 flex flex-col gap-4 shadow-xl"
           >
-            <nav className="flex flex-col px-4 py-6 gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`text-sm tracking-wide transition-colors ${
-                    isActive(link.path)
-                      ? 'text-gray-900 dark:text-white'
-                      : 'text-gray-500 dark:text-gray-400'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+            {navLinks.map((link) => (
               <Link
-                to="/quote"
+                key={link.path}
+                to={link.path}
                 onClick={() => setIsMenuOpen(false)}
-                className="mt-4 px-6 py-3 bg-gray-100 dark:bg-transparent border border-gray-200 dark:border-[#333] text-gray-900 dark:text-white text-sm font-bold tracking-widest uppercase hover:border-voltcraft-primary text-center transition-all rounded"
+                className="text-lg font-medium text-gray-900 dark:text-white py-2 brutal-border border-b border-opacity-50"
               >
-                Get Quote
+                {link.label}
               </Link>
-            </nav>
+            ))}
+            <Link
+              to="/quote"
+              onClick={() => setIsMenuOpen(false)}
+              className="mt-4 px-6 py-4 bg-voltcraft-primary text-white text-center font-bold"
+            >
+              Get Instant Quote
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

@@ -20,9 +20,8 @@ const PropertyBar = ({ value, max = 5, color = 'voltcraft-primary' }: { value: n
       <div
         key={i}
         className={`h-2 w-6 rounded-full ${
-          i < value ? `bg-${color}` : 'bg-voltcraft-gray-700'
+          i < value ? `bg-${color}` : 'bg-gray-200 dark:bg-voltcraft-gray-700'
         }`}
-        style={{ backgroundColor: i < value ? (color === 'voltcraft-primary' ? '#0066FF' : '#00D4AA') : undefined }}
       />
     ))}
   </div>
@@ -46,7 +45,7 @@ const MaterialsPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl font-display font-mono font-bold uppercase tracking-widest text-gray-900 dark:text-white">
+          <h1 className="text-3xl md:text-4xl   font-bold   text-gray-900 dark:text-white">
             Materials <span className="text-voltcraft-primary">Guide</span>
           </h1>
           <p className="mt-4 text-gray-600 dark:text-voltcraft-gray-400 max-w-2xl mx-auto">
@@ -97,14 +96,14 @@ const MaterialsPage = () => {
               <div className="p-6 md:p-8 bg-voltcraft-primary/10 border-b border-gray-200 dark:border-voltcraft-gray-800">
                 <div className="flex items-start justify-between">
                   <div>
-                    <h2 className="text-2xl md:text-3xl font-display font-mono font-bold uppercase tracking-widest text-gray-900 dark:text-white">
+                    <h2 className="text-2xl md:text-3xl   font-bold   text-gray-900 dark:text-white">
                       {selectedMaterial.shortName}
                     </h2>
                     <p className="text-gray-600 dark:text-voltcraft-gray-400 mt-1">{selectedMaterial.name}</p>
                   </div>
                   <div className="text-right">
                     <p className="text-sm text-gray-600 dark:text-voltcraft-gray-400">Price per gram</p>
-                    <p className="text-3xl font-mono font-bold uppercase tracking-widest text-voltcraft-primary">₦{selectedMaterial.pricePerGram}</p>
+                    <p className="text-3xl  font-bold   text-voltcraft-primary">₦{selectedMaterial.pricePerGram}</p>
                   </div>
                 </div>
               </div>
@@ -212,7 +211,7 @@ const MaterialsPage = () => {
 
         {/* Comparison Table */}
         <div className="mt-16">
-          <h2 className="text-2xl font-display font-mono font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-8 text-center">
+          <h2 className="text-2xl   font-bold   text-gray-900 dark:text-white mb-8 text-center">
             Material Comparison
           </h2>
           <div className="overflow-x-auto">

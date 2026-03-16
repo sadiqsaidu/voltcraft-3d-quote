@@ -1,130 +1,147 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { Upload, Cpu, Watch, ShieldCheck } from 'lucide-react'
 
-const HomePage = () => {
-  const features = [
-    {
-      title: 'FAST TURNAROUND',
-      description: 'Streamlined production process. Upload your model, select materials, and receive your high-quality prints within 24-72 hours.'
-    },
-    {
-      title: 'FULL AUTHORITY',
-      description: 'Optional control over layer heights, infills, and materials. You define exact parameters to match your specific engineering needs.'
-    },
-    {
-      title: 'PRECISION STANDARD',
-      description: 'Automatic Bambu Lab certification. Your models are printed with absolute dimension accuracy and flawless first layers.'
-    }
-  ]
+const features = [
+  {
+    icon: Upload,
+    title: 'Easy Upload',
+    description: 'Simply upload your 3D models and instantly get a quote.'
+  },
+  {
+    icon: Cpu,
+    title: 'Advanced Materials',
+    description: 'Wide variety of materials suitable for prototyping or production.'
+  },
+  {
+    icon: Watch,
+    title: 'Fast Turnaround',
+    description: 'Rapid production times to keep your projects on schedule.'
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Quality Guaranteed',
+    description: 'Rigorous inspection standards for every printed part.'
+  }
+]
 
-  const process = [
-    { step: '01', title: 'CONNECT', desc: 'Link your specifications and upload your 3D files (STL, OBJ, 3MF) to the terminal.' },
-    { step: '02', title: 'CONFIGURE', desc: 'Define material, layer height, structural infill, and review structural analysis.' },
-    { step: '03', title: 'LAUNCH', desc: 'Sign the transaction order and deploy your physical production run instantly.' }
-  ]
-
+export default function HomePage() {
   return (
-    <div className="min-h-screen pt-20 pb-32">
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-24 border-b border-gray-200 dark:border-[#222]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 10 }}
+    <div className="w-full h-full min-h-screen bg-white dark:bg-[#0D0D0D] text-gray-900 dark:text-gray-100 flex flex-col pt-8 lg:pt-16 max-w-[1500px] mx-auto px-4 lg:px-8 pb-12">
+      
+      {/* 
+        HERO SECTION: 3-column Layout 
+        Left: Text & CTA
+        Middle: 3D Printer overlapping absolute
+        Right: 3 Mini info cards
+      */}
+      <section className="relative w-full flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch justify-between mb-24">
+        
+        {/* Left Column: Main Value Prop */}
+        <div className="flex-1 brutal-border border bg-gray-50 dark:bg-[#141414] p-8 lg:p-12 relative flex flex-col justify-center min-h-[500px] z-10 w-full lg:w-1/2">
+          <div className="grid-node node-tl"></div>
+          <div className="grid-node node-tr"></div>
+          <div className="grid-node node-bl"></div>
+          <div className="grid-node node-br"></div>
+          
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-display font-medium text-gray-900 dark:text-white uppercase tracking-widest mb-8"
+            className="text-5xl lg:text-7xl font-bold leading-[1.1] mb-6 text-gray-900 dark:text-white"
           >
-            VOLTCRAFT
+            Precision <br />
+            <span className="text-voltcraft-primary">3D Printing</span> <br />
+            On Demand.
           </motion.h1>
           
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-            className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-lg leading-loose space-y-2"
+            transition={{ delay: 0.1 }}
+            className="text-lg text-gray-600 dark:text-gray-400 max-w-md mb-10"
           >
-            <span className="block">One click. One signature. Your print is live.</span>
-            <span className="block">The fastest way to deploy physical prototypes in Nigeria.</span>
+            Precision manufacturing for engineers and creators. Upload your models for an instant, accurate quote.
           </motion.p>
           
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6"
+            transition={{ delay: 0.2 }}
+            className="flex flex-wrap gap-4"
           >
-            <Link
-              to="/quote"
-              className="w-full sm:w-auto px-8 py-4 bg-gray-100 dark:bg-white text-black font-mono font-bold tracking-widest uppercase hover:bg-gray-200 dark:hover:bg-gray-200 transition-colors rounded-sm"
+            <Link 
+              to="/quote" 
+              className="bg-voltcraft-primary text-white font-bold px-8 py-4 brutal-border hover:bg-opacity-90 transition-all border border-transparent shadow-lg"
             >
-              INITIALIZE LAUNCH
+              Get Instant Quote
             </Link>
-            <Link
-              to="/summary"
-              className="w-full sm:w-auto px-8 py-4 bg-transparent border border-gray-300 dark:border-[#333] text-gray-900 dark:text-white font-mono font-bold tracking-widest uppercase hover:border-gray-400 dark:hover:border-[#555] transition-colors rounded-sm"
+            <Link 
+              to="/materials" 
+              className="px-8 py-4 brutal-border border bg-white dark:bg-[#0D0D0D] text-gray-900 dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-[#1A1A1A] transition-colors"
             >
-              SYSTEM MANUAL
+              View Materials
             </Link>
           </motion.div>
         </div>
-      </section>
 
-      {/* Features Section */}
-      <section className="py-24 border-b border-gray-200 dark:border-[#222]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="p-8 md:p-10 bg-white dark:bg-[#050505] border border-gray-200 dark:border-[#222] rounded-xl hover:border-voltcraft-primary transition-colors"
-              >
-                <h3 className="text-xl font-bold font-mono tracking-widest text-gray-900 dark:text-white mb-6 uppercase">{feature.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-loose">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+        {/* Right Column: Key Stats/Cards */}
+        <div className="flex-1 flex flex-col gap-6 lg:gap-8 z-10 w-full lg:w-1/2">
+          {[
+            { title: "24h", subtitle: "Average Turnaround", desc: "For standard PLA/PETG parts" },
+            { title: "0.05mm", subtitle: "Layer Resolution", desc: "Ultra-fine detail printing" },
+            { title: "15+", subtitle: "Material Types", desc: "Engineering & visual grades" }
+          ].map((stat, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 + (i * 0.1) }}
+              className="brutal-border border bg-gray-50 dark:bg-[#141414] p-6 flex-1 relative flex flex-col justify-center"
+            >
+              <div className="grid-node node-tl"></div>
+              <div className="grid-node node-br"></div>
+              
+              <h3 className="text-3xl lg:text-4xl font-bold text-voltcraft-primary mb-1">{stat.title}</h3>
+              <p className="font-bold text-gray-900 dark:text-white mb-2">{stat.subtitle}</p>
+              <p className="text-sm text-gray-500">{stat.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-      {/* Execution Protocol (How it works) */}
-      <section className="py-32">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-2xl md:text-3xl font-display text-gray-900 dark:text-white tracking-[0.2em] uppercase">
-              EXECUTION PROTOCOL
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
-            {process.map((item, index) => (
-              <motion.div
-                key={item.step}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="relative"
-              >
-                <div className="text-5xl font-display text-gray-200 dark:text-[#222] mb-6 tracking-widest opacity-80">
-                  {item.step}
-                </div>
-                <h3 className="text-lg font-bold font-mono text-gray-900 dark:text-white mb-4 uppercase tracking-widest">{item.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-loose">
-                  {item.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+      {/* WHY CHOOSE US - Grid layout */}
+      <section className="mt-12">
+        <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-gray-900 dark:text-white">Our Process</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((feature, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="brutal-border border bg-gray-50 dark:bg-[#141414] p-8 relative flex flex-col group hover:border-voltcraft-primary transition-colors"
+            >
+              <div className="grid-node node-tl"></div>
+              <div className="grid-node node-br"></div>
+              
+              <div className="w-12 h-12 bg-white dark:bg-[#1A1A1A] brutal-border border flex items-center justify-center text-voltcraft-primary mb-6">
+                <feature.icon className="w-6 h-6" />
+              </div>
+              <div className="text-5xl font-bold text-gray-200 dark:text-[#222] absolute top-6 right-6 z-0 pointer-events-none transition-colors group-hover:text-gray-300 dark:group-hover:text-[#333]">
+                0{idx + 1}
+              </div>
+              
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 relative z-10">{feature.title}</h3>
+              <p className="text-gray-600 dark:text-gray-400 relative z-10 text-sm leading-relaxed">
+                {feature.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </section>
+      
     </div>
   )
 }
-
-export default HomePage
