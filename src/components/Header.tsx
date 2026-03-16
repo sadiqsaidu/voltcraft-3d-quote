@@ -18,7 +18,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-[#0A0A0A]/95 backdrop-blur-sm border-b border-gray-200 dark:border-[#222]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-voltcraft-dark/95 backdrop-blur-sm border-b border-gray-200 dark:border-voltcraft-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
@@ -86,7 +86,7 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-gray-200 dark:border-[#222] bg-white dark:bg-[#0A0A0A]"
+            className="md:hidden border-t border-gray-200 dark:border-voltcraft-border bg-white dark:bg-voltcraft-dark"
           >
             <nav className="flex flex-col p-4 gap-2">
               {navLinks.map((link) => (
@@ -96,7 +96,7 @@ const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={`px-4 py-3 rounded-lg text-sm transition-colors ${
                     isActive(link.path)
-                      ? 'bg-gray-50 dark:bg-[#1A1A1A] text-voltcraft-primary font-medium'
+                      ? 'bg-gray-50 dark:bg-voltcraft-gray-800 text-voltcraft-primary font-medium'
                       : 'text-gray-500 dark:text-gray-400'
                   }`}
                 >

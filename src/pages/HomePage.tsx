@@ -92,7 +92,7 @@ const HomePage = () => {
               </Link>
               <Link
                 to="/materials"
-                className="flex items-center gap-2 px-8 py-4 bg-white dark:bg-[#111] border border-gray-200 dark:border-[#333] rounded-lg font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-[#1A1A1A] transition-colors"
+                className="flex items-center gap-2 px-8 py-4 bg-white dark:bg-voltcraft-dark border border-gray-200 dark:border-voltcraft-border rounded-lg font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-voltcraft-gray-800 transition-colors"
               >
                 View Materials
               </Link>
@@ -107,7 +107,7 @@ const HomePage = () => {
               transition={{ duration: 0.7, delay: 0.4 }}
               className="relative mx-auto max-w-3xl"
             >
-              <div className="aspect-video rounded-xl bg-white dark:bg-[#0A0A0A] border border-gray-200 dark:border-[#222] overflow-hidden flex items-center justify-center shadow-2xl shadow-black/50">
+              <div className="aspect-video rounded-xl bg-white dark:bg-voltcraft-dark border border-gray-200 dark:border-voltcraft-border overflow-hidden flex items-center justify-center shadow-2xl shadow-black/50">
                 <div className="text-center p-8">
                   <Box className="w-24 h-24 mx-auto text-voltcraft-primary mb-4 animate-float opacity-80" />
                   <p className="text-gray-600 dark:text-gray-400 font-medium">3D Model Preview</p>
@@ -120,7 +120,7 @@ const HomePage = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                className="absolute -left-1 -top-3 z-10 w-[46%] max-w-[180px] min-h-[64px] sm:w-auto sm:max-w-none sm:min-h-0 sm:-left-4 md:-left-16 sm:top-1/4 bg-white dark:bg-[#111] border border-gray-200 dark:border-[#333] rounded-lg p-3 sm:p-4 shadow-xl"
+                className="absolute -left-1 -top-3 z-10 w-[46%] max-w-[180px] min-h-[64px] sm:w-auto sm:max-w-none sm:min-h-0 sm:-left-4 md:-left-16 sm:top-1/4 bg-white dark:bg-voltcraft-dark border border-gray-200 dark:border-voltcraft-border rounded-lg p-3 sm:p-4 shadow-xl"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-md bg-voltcraft-primary/10 flex items-center justify-center border border-voltcraft-primary/20">
@@ -137,7 +137,7 @@ const HomePage = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                className="absolute -right-1 -bottom-8 z-10 w-[46%] max-w-[180px] min-h-[64px] sm:w-auto sm:max-w-none sm:min-h-0 sm:-right-4 md:-right-16 sm:bottom-1/4 bg-white dark:bg-[#111] border border-gray-200 dark:border-[#333] rounded-lg p-3 sm:p-4 shadow-xl"
+                className="absolute -right-1 -bottom-8 z-10 w-[46%] max-w-[180px] min-h-[64px] sm:w-auto sm:max-w-none sm:min-h-0 sm:-right-4 md:-right-16 sm:bottom-1/4 bg-white dark:bg-voltcraft-dark border border-gray-200 dark:border-voltcraft-border rounded-lg p-3 sm:p-4 shadow-xl"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-md bg-voltcraft-secondary/10 flex items-center justify-center border border-voltcraft-secondary/20">
@@ -155,7 +155,7 @@ const HomePage = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-50 dark:bg-black border-y border-gray-200 dark:border-[#222]">
+      <section className="py-20 bg-gray-50 dark:bg-black border-y border-gray-200 dark:border-voltcraft-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
@@ -174,7 +174,7 @@ const HomePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-6 bg-white dark:bg-[#0A0A0A] rounded-lg border border-gray-200 dark:border-[#2A2A2A] hover:border-voltcraft-primary/50 transition-colors group"
+                className="p-6 bg-white dark:bg-voltcraft-dark rounded-lg border border-gray-200 dark:border-voltcraft-border hover:border-voltcraft-primary/50 transition-colors group"
               >
                 <div className="w-12 h-12 rounded-lg bg-voltcraft-primary/10 flex items-center justify-center mb-4 transition-transform border border-voltcraft-primary/20">
                   <feature.icon className="w-6 h-6 text-voltcraft-primary" />
@@ -237,7 +237,7 @@ const HomePage = () => {
       </section>
 
       {/* Materials Preview */}
-      <section className="py-20 bg-gray-50 dark:bg-black border-y border-gray-200 dark:border-[#222]">
+      <section className="py-20 bg-gray-50 dark:bg-black border-y border-gray-200 dark:border-voltcraft-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
@@ -256,7 +256,7 @@ const HomePage = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="p-6 bg-white dark:bg-[#0A0A0A] rounded-lg border border-gray-200 dark:border-[#2A2A2A] hover:border-voltcraft-primary/50 transition-colors text-center"
+                className="p-6 bg-white dark:bg-voltcraft-dark rounded-lg border border-gray-200 dark:border-voltcraft-border hover:border-voltcraft-primary/50 transition-colors text-center"
               >
                 <h3 className="font-semibold text-gray-900 dark:text-white text-xl mb-1">{material.name}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 font-light mb-4">{material.desc}</p>
@@ -285,7 +285,7 @@ const HomePage = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-8 md:p-12 text-center bg-white dark:bg-[#0A0A0A] border border-gray-200 dark:border-[#2A2A2A] rounded-lg shadow-2xl shadow-black/10"
+            className="p-8 md:p-12 text-center bg-white dark:bg-voltcraft-dark border border-gray-200 dark:border-voltcraft-border rounded-lg shadow-2xl shadow-black/10"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">
               Ready to bring your ideas to life?
@@ -303,7 +303,7 @@ const HomePage = () => {
               </Link>
               <Link
                 to="/contact"
-                className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-gray-100 dark:bg-[#111] border border-gray-200 dark:border-[#333] rounded-lg font-medium text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-[#1A1A1A] transition-colors"
+                className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-gray-100 dark:bg-voltcraft-dark border border-gray-200 dark:border-voltcraft-border rounded-lg font-medium text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-voltcraft-gray-800 transition-colors"
               >
                 Contact Us
               </Link>

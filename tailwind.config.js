@@ -9,21 +9,21 @@ export default {
     extend: {
       colors: {
         voltcraft: {
-          primary: '#7C3AED', // Bright Purple
+          primary: '#2563EB', // Blue 600 - true vibrant blue like the left of the gradient
           secondary: '#00D4FF', // Cyan
-          dark: '#0B0516', // Deep purple dark from screenshot
-          darker: '#06020A', // Darker background
-          border: '#2A1F40', // Hairline border color matching theme
+          dark: '#0B0F19', // Deep navy dark mode background
+          darker: '#020617', // Even darker navy (slate-950)
+          border: '#1E293B', // Slate grey border
           gray: {
-            100: '#F4F2FA',
-            200: '#EAE6F5',
-            300: '#C7BEE6',
-            400: '#9B8DC9',
-            500: '#7260AA',
-            600: '#56458A',
-            700: '#3D2F6B',
-            800: '#261C47',
-            900: '#140D2B'
+            100: '#F1F5F9', // slate-100
+            200: '#E2E8F0',
+            300: '#CBD5E1',
+            400: '#94A3B8',
+            500: '#64748B',
+            600: '#475569',
+            700: '#334155',
+            800: '#1E293B',
+            900: '#0F172A'
           }
         }
       },

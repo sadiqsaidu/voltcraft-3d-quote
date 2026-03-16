@@ -4,13 +4,13 @@
 
 @layer base {
   :root {
-    --background: 246 38% 96%; /* Lavender-ish #f4f2fa */
-    --foreground: 260 60% 5%;
+    --background: 210 40% 98%; /* Very light blue-gray */
+    --foreground: 222 47% 11%;
   }
 
   .dark {
-    --background: 260 64% 5%; /* Very deep purple #06020A */
-    --foreground: 0 0% 100%;
+    --background: 222 47% 11%; /* Very dark navy #020617 */
+    --foreground: 210 40% 98%;
   }
 
   body {

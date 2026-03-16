@@ -116,8 +116,8 @@ const QuotePage = () => {
                   currentStep === step.key
                     ? 'bg-voltcraft-primary'
                     : activeAnalysis && (step.key === 'upload' || (step.key === 'configure') || (step.key === 'order' && quote))
-                    ? 'bg-white dark:bg-#0A0A0A text-gray-700 dark:text-voltcraft-gray-300 hover:bg-white dark:bg-#0A0A0A/80'
-                    : 'bg-gray-50 dark:bg-#000000 text-voltcraft-gray-600 cursor-not-allowed'
+                    ? 'bg-white dark:bg-voltcraft-dark text-gray-700 dark:text-voltcraft-gray-300 hover:bg-white dark:bg-voltcraft-dark/80'
+                    : 'bg-gray-50 dark:bg-voltcraft-darker text-voltcraft-gray-600 cursor-not-allowed'
                 }`}
               >
                 {step.label}
@@ -146,7 +146,7 @@ const QuotePage = () => {
                 {/* Left: Upload & Manual Input */}
                 <div className="space-y-6">
                   {/* Input Mode Tabs */}
-                  <div className="flex gap-2 p-1 bg-gray-50 dark:bg-#000000 rounded-lg">
+                  <div className="flex gap-2 p-1 bg-gray-50 dark:bg-voltcraft-darker rounded-lg">
                     <button
                       onClick={() => setInputMode('file')}
                       className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium transition-all ${
@@ -162,7 +162,7 @@ const QuotePage = () => {
                       onClick={() => setInputMode('manual')}
                       className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium transition-all ${
                         inputMode === 'manual'
-                          ? 'bg-voltcraft-secondary text-#000000'
+                          ? 'bg-voltcraft-secondary text-black'
                           : 'text-gray-600 dark:text-voltcraft-gray-400 hover:text-gray-900 dark:text-white'
                       }`}
                     >
@@ -264,7 +264,7 @@ const QuotePage = () => {
                   {/* Model info & 3D Preview */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {/* Info card */}
-                    <div className="p-4 bg-white dark:bg-#0A0A0A rounded-lg border border-gray-200 dark:border-white/10">
+                    <div className="p-4 bg-white dark:bg-voltcraft-dark rounded-lg border border-gray-200 dark:border-white/10">
                       <div className="flex items-center justify-between mb-3">
                         <div>
                           <p className="text-sm text-gray-600 dark:text-voltcraft-gray-400">
@@ -282,11 +282,11 @@ const QuotePage = () => {
                         </button>
                       </div>
                       <div className="grid grid-cols-2 gap-2 text-sm">
-                        <div className="p-2 bg-gray-50 dark:bg-#000000 rounded-lg">
+                        <div className="p-2 bg-gray-50 dark:bg-voltcraft-darker rounded-lg">
                           <span className="text-gray-500 dark:text-voltcraft-gray-500">Volume</span>
                           <p className="text-gray-900 dark:text-white font-medium">{activeAnalysis.volume} cm³</p>
                         </div>
-                        <div className="p-2 bg-gray-50 dark:bg-#000000 rounded-lg">
+                        <div className="p-2 bg-gray-50 dark:bg-voltcraft-darker rounded-lg">
                           <span className="text-gray-500 dark:text-voltcraft-gray-500">Type</span>
                           <p className="text-gray-900 dark:text-white font-medium">{inputMode === 'file' ? 'STL File' : 'Estimated'}</p>
                         </div>
@@ -335,7 +335,7 @@ const QuotePage = () => {
                           exit={{ opacity: 0, height: 0 }}
                           className="overflow-hidden"
                         >
-                          <div className="p-6 bg-white dark:bg-#0A0A0A rounded-lg border border-gray-200 dark:border-voltcraft-gray-800">
+                          <div className="p-6 bg-white dark:bg-voltcraft-dark rounded-lg border border-gray-200 dark:border-voltcraft-gray-800">
                             <PrintSettingsForm
                               settings={settings}
                               onSettingsChange={setSettings}
@@ -386,7 +386,7 @@ const QuotePage = () => {
               exit={{ opacity: 0, y: -20 }}
               className="max-w-2xl mx-auto"
             >
-              <div className="p-6 md:p-8 bg-white dark:bg-#0A0A0A rounded-lg border border-gray-200 dark:border-white/10">
+              <div className="p-6 md:p-8 bg-white dark:bg-voltcraft-dark rounded-lg border border-gray-200 dark:border-white/10">
                 <OrderForm
                   fileName={inputMode === 'file' ? (file?.name || 'model.stl') : 'Manual Dimensions Entry'}
                   analysis={activeAnalysis}
