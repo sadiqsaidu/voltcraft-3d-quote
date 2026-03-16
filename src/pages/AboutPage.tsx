@@ -265,7 +265,7 @@ const AboutPage = () => {
             </p>
             <Link
               to="/quote"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-voltcraft-primary rounded-lg text-black font-semibold text-white hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-voltcraft-primary rounded-lg font-semibold text-white hover:opacity-90 transition-opacity"
             >
               Get Started
               <ArrowRight className="w-5 h-5" />

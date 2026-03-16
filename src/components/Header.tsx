@@ -56,7 +56,7 @@ const Header = () => {
             </button>
             <Link
               to="/quote"
-              className="px-5 py-2 bg-voltcraft-primary text-black dark:text-[#0A0A0A] rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
+              className="px-5 py-2 bg-voltcraft-primary text-white rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
             >
               Get Quote
             </Link>
@@ -106,7 +106,7 @@ const Header = () => {
               <Link
                 to="/quote"
                 onClick={() => setIsMenuOpen(false)}
-                className="mt-2 px-4 py-3 bg-voltcraft-primary text-black dark:text-[#0A0A0A] rounded-lg text-sm font-medium text-center"
+                className="mt-2 px-4 py-3 bg-voltcraft-primary text-white rounded-lg text-sm font-medium text-center"
               >
                 Get Quote
               </Link>

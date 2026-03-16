@@ -85,7 +85,7 @@ const HomePage = () => {
             >
               <Link
                 to="/quote"
-                className="flex items-center gap-2 px-8 py-4 bg-voltcraft-primary text-black rounded-lg font-medium hover:opacity-90 transition-opacity text-lg"
+                className="flex items-center gap-2 px-8 py-4 bg-voltcraft-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity text-lg"
               >
                 Get Instant Quote
                 <ArrowRight className="w-5 h-5" />
@@ -214,7 +214,7 @@ const HomePage = () => {
                 )}
                 
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 rounded-full bg-voltcraft-primary flex items-center justify-center text-xl font-bold text-black mb-4 shrink-0 shadow-[0_0_20px_rgba(197,160,89,0.3)]">
+                  <div className="w-16 h-16 rounded-full bg-voltcraft-primary flex items-center justify-center text-xl font-bold mb-4 shrink-0 shadow-[0_0_20px_rgba(124,58,237,0.3)]">
                     {item.step}
                   </div>
                   <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">{item.title}</h3>
@@ -227,7 +227,7 @@ const HomePage = () => {
           <div className="text-center mt-12">
             <Link
               to="/quote"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-voltcraft-primary text-black rounded-lg font-medium hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(197,160,89,0.2)]"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-voltcraft-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(124,58,237,0.2)]"
             >
               Start Your Project
               <ArrowRight className="w-5 h-5" />
@@ -296,7 +296,7 @@ const HomePage = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 to="/quote"
-                className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-voltcraft-primary text-black rounded-lg font-medium hover:opacity-90 transition-opacity"
+                className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-voltcraft-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
               >
                 <Upload className="w-5 h-5" />
                 Upload Your Model

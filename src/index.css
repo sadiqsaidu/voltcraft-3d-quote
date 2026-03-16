@@ -4,29 +4,29 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 4%;
+    --background: 246 38% 96%; /* Lavender-ish #f4f2fa */
+    --foreground: 260 60% 5%;
   }
 
   .dark {
-    --background: 0 0% 0%;
+    --background: 260 64% 5%; /* Very deep purple #06020A */
     --foreground: 0 0% 100%;
   }
 
   body {
-    @apply bg-white text-gray-900 dark:bg-black dark:text-white font-sans antialiased;
-    background-color: var(--background);
-    color: var(--foreground);
+    @apply font-sans antialiased;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/70 dark:bg-[#0A0A0A]/70 backdrop-blur-xl border-b border-gray-200 dark:border-[#222];
+    @apply bg-white/70 dark:bg-voltcraft-dark/70 backdrop-blur-xl border-b border-voltcraft-gray-200 dark:border-voltcraft-border;
   }
   
   .glass-card {
-    @apply bg-white dark:bg-[#0A0A0A] border border-gray-200 dark:border-[#222] rounded-lg shadow-sm;
+    @apply bg-white dark:bg-voltcraft-dark border border-voltcraft-gray-200 dark:border-voltcraft-border rounded-lg shadow-sm;
   }
 }
 
@@ -41,11 +41,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-300 dark:bg-[#333] rounded-full;
+  @apply bg-voltcraft-gray-300 dark:bg-voltcraft-gray-700 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-400 dark:bg-[#444];
+  @apply bg-voltcraft-gray-400 dark:bg-voltcraft-gray-600;
 }
 
 ::selection {

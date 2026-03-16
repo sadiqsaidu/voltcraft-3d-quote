@@ -208,7 +208,7 @@ const QuotePage = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       onClick={() => setCurrentStep('configure')}
-                      className="w-full px-6 py-4 bg-voltcraft-primary rounded-lg text-black font-semibold text-white hover:opacity-90 transition-opacity"
+                      className="w-full px-6 py-4 bg-voltcraft-primary rounded-lg font-semibold text-white hover:opacity-90 transition-opacity"
                     >
                       Continue to Configure →
                     </motion.button>
@@ -366,7 +366,7 @@ const QuotePage = () => {
                           onClick={handleProceedToOrder}
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
-                          className="w-full mt-6 px-6 py-4 bg-voltcraft-primary rounded-lg text-black font-semibold text-white hover:opacity-90 transition-opacity text-lg"
+                          className="w-full mt-6 px-6 py-4 bg-voltcraft-primary rounded-lg font-semibold text-white hover:opacity-90 transition-opacity text-lg"
                         >
                           Proceed to Order
                         </motion.button>

@@ -199,7 +199,7 @@ const MaterialsPage = () => {
                 <div className="pt-4 border-t border-gray-200 dark:border-voltcraft-gray-800">
                   <Link
                     to="/quote"
-                    className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-voltcraft-primary rounded-lg text-black font-semibold text-white hover:opacity-90 transition-opacity"
+                    className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-voltcraft-primary rounded-lg font-semibold text-white hover:opacity-90 transition-opacity"
                   >
                     Print with {selectedMaterial.shortName}
                     <ArrowRight className="w-5 h-5" />

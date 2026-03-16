@@ -262,7 +262,7 @@ const ContactPage = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-voltcraft-primary rounded-lg text-black font-semibold text-white hover:opacity-90 transition-opacity disabled:opacity-50"
+                      className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-voltcraft-primary rounded-lg font-semibold text-white hover:opacity-90 transition-opacity disabled:opacity-50"
                     >
                       {isSubmitting ? (
                         <>

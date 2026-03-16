@@ -9,21 +9,21 @@ export default {
     extend: {
       colors: {
         voltcraft: {
-          primary: '#C5A059', // Desaturated Mustard Gold from screenshot
-          secondary: '#8C3333', // Muted Red from screenshot charts
-          dark: '#0A0A0A', // Deep panel gray
-          darker: '#000000', // Pure black background
-          border: '#222222', // Hairline border color
+          primary: '#7C3AED', // Bright Purple
+          secondary: '#00D4FF', // Cyan
+          dark: '#0B0516', // Deep purple dark from screenshot
+          darker: '#06020A', // Darker background
+          border: '#2A1F40', // Hairline border color matching theme
           gray: {
-            100: '#F5F5F5',
-            200: '#EAEAEA',
-            300: '#A3A3A3',
-            400: '#737373',
-            500: '#525252',
-            600: '#404040',
-            700: '#2A2A2A',
-            800: '#1A1A1A',
-            900: '#0A0A0A'
+            100: '#F4F2FA',
+            200: '#EAE6F5',
+            300: '#C7BEE6',
+            400: '#9B8DC9',
+            500: '#7260AA',
+            600: '#56458A',
+            700: '#3D2F6B',
+            800: '#261C47',
+            900: '#140D2B'
           }
         }
       },
